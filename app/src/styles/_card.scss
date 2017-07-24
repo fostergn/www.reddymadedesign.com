@@ -1,0 +1,132 @@
+.cards {
+		&__container {
+			display: grid;
+			grid-template-columns: 1fr;
+			-ms-grid-column-align: 1fr;
+			grid-gap: 12px;
+			@include mq($breakpointB){
+				grid-template-columns: .8fr;
+				-ms-grid-column-align: .8fr;				
+			}		
+			@include mq($breakpointC){
+				grid-template-columns: repeat(2, 1fr);
+				-ms-grid-column-align: repeat(2, 1fr);				
+			}		
+			@include mq($breakpointD){
+				grid-template-columns: repeat(3, 1fr);
+				-ms-grid-column-align: repeat(3, 1fr);				
+			}
+			&--calendar {
+				grid-template-columns: 1fr;
+				@include mq($breakpointB){ 
+					grid-template-columns: .2fr .8fr;
+					justify-items:flex-end;
+				}
+				@include mq($breakpointC){ 
+					grid-template-columns: repeat(2, 1fr);
+				}
+				@include mq($breakpointD){ 
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+			&--events {
+				grid-column:span 12;
+				display:grid;
+				padding-top: 0;
+				@include mq($breakpointB){
+					display:inline-grid;
+					grid-column: span 8;
+					padding-top: 4px;
+				}
+				@include mq($breakpointC){
+					display:grid;
+					grid-column: span 12;
+					padding-top: 0;
+				}
+			}		
+	}
+}
+
+.card {
+	&__wrapper {
+		margin-bottom:30px;
+		&--calendar {
+			grid-column: auto;
+			max-width:none;
+			@include mq($breakpointB){
+				grid-column: 2;
+				max-width:470px;
+			}
+			@include mq($breakpointC){
+				grid-column: auto;
+				max-width:none;
+			}
+		}
+	}
+	&__header {
+		font-size: 16px;
+		font-weight:bold;
+		max-width: 100%;
+		line-height:16px;
+		@include mq($breakpointB){
+			max-width: 75%;
+			font-size: 14px;
+		}
+		@include mq($breakpointC){
+			font-size: 16px;
+			line-height: 18px;
+		}
+		@include mq($breakpointD){
+			max-width: 75%;
+		}
+		&--cta {
+			color: $yellow;
+		}
+	}
+	&__copy {
+		p {
+			max-width: none;
+			@include mq($breakpointB){
+				max-width: 470px;
+			}
+			@include mq($breakpointB){
+				max-width: none;
+			}
+		}
+	}
+	&__content, &__copy, {
+		font-family:Janson, 'Times New Roman', Times, serif;
+		letter-spacing: -0.015em;
+		line-height: 16px;
+    font-size: 14px;
+		@include mq($breakpointC){
+			line-height: 18px;
+    	font-size: 16px;
+		}
+		@include mq($breakpointC){
+			padding-right:10px;
+		}
+		@include mq($breakpointD){
+			padding-right:12px;
+		}
+	}
+	&--single {
+		margin-top:30px;
+		@include mq($breakpointB){
+			margin-top:0px;
+			// &:first-child {
+			// 	margin-top:0;
+			// }
+		}
+		@include mq($breakpointC){
+			margin-top:30px;
+			// &:first-child {
+			// 	margin-top:60px;
+			// }
+		}
+	}
+	&__details, &__title, &__cta {
+		margin-bottom:1em;
+		display:block;
+	}
+}

@@ -1,0 +1,37 @@
+$yellow: #fbb415;
+$salmon: #fb7356;
+$cyan: #00e1ff;
+
+$breakpointB: 480px;
+$breakpointC: 768px;
+$breakpointD: 1260px;
+
+$breakpointA2: 400px;
+$breakpointB2: 580px;
+$breakpointB3: 680px;
+$breakpointC2: 980px;
+$breakpointC3: 1080px;
+
+$customMenuCBreakpoint: 970px;
+
+// menu height
+$breakpointAHeight: 310px; //60vh;
+$breakpointAHeightFooter : 126px;
+$breakpointCHeight: 60px;
+
+#root {
+    overflow:hidden;
+}
+
+// media query mixin
+@mixin mq($width, $height: false) {
+    @if $height {
+        @media ( min-width: + $width ) and ( min-height: + $height ) {
+            @content;
+        }
+    }@else {
+        @media ( min-width: + $width ) {
+            @content;
+        }
+    }
+}

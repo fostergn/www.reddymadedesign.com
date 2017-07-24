@@ -1,0 +1,114 @@
+.right-filters {
+	&__wrapper {
+		display:flex;
+		order:1;
+		justify-content:space-between;
+		width:100%;
+		margin-bottom:15px;
+		@include mq($breakpointC){
+			margin-bottom:0px;
+			order:2;
+			justify-content:initial;
+			width:auto;
+		}
+		& li {
+			padding-left:0;
+			font-weight:bold;
+			cursor:pointer;
+			@include mq($breakpointC){
+				padding-left:45px;
+			}
+		}
+	}
+}
+
+.filters {
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		flex-wrap:wrap;
+		@include mq($breakpointC){
+			flex-wrap:nowrap;
+		}
+	}
+	&__header {
+		color: $yellow;
+		font-weight:bold;
+		cursor:pointer;
+		padding-left: 0px;
+		// @include mq($breakpointC){
+		// 	padding-left: 0px;
+		// }
+		&--hidden {
+			color: #000;
+		}
+	}
+	&--hidden {
+		& .filters__header {
+			color: #dedede;
+			cursor:default;
+		}
+		& .filters__list {
+			visibility: hidden !important;
+		}
+	}
+}
+
+.filters__wrapper {
+	display:flex;
+	align-items:flex-start;
+	order:2;
+	flex-direction:column;
+	padding-bottom:10px;
+	@include mq($breakpointC){
+		padding-bottom:0px;
+		flex-direction:row;
+		align-items:center;
+		order:1;
+	}
+}
+
+.filters__list {
+	line-height:14px;
+	display:flex;
+	flex-wrap: wrap;
+	font-size:12px;
+	padding-left: 0px;
+	min-height:28px;
+	align-items:center;
+	visibility: visible;
+	@include mq($breakpointC){
+		padding-left: 30px;
+		max-width: 580px;
+	}	
+	&--hidden{
+		visibility:hidden;
+		display:none;
+		@include mq($breakpointC){
+			display:flex;
+		}
+	}
+	& li {
+		display:inline;
+		padding-right: 20px;
+		padding-top: 20px;
+		font-weight: bold;
+		cursor: pointer;
+		@include mq($breakpointC){
+			padding-right: 15px;
+			padding-top: 0px;
+		}
+	}
+}
+
+.filter--professional:hover, .tag--active.filter--professional{
+	color: $cyan;
+}
+.filter--institutional:hover, .tag--active.filter--institutional{
+	color: $salmon;
+}
+.filter--buildings:hover, .tag--active.filter--buildings{
+	color: $yellow;
+}
