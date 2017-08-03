@@ -1,27 +1,4 @@
-$yellow: #fbb415;
-$salmon: #fb7356;
-$cyan: #00e1ff;
-
-$breakpointB: 480px;
-$breakpointC: 768px;
-$breakpointD: 1260px;
-
-$breakpointA2: 400px;
-$breakpointB2: 580px;
-$breakpointB3: 680px;
-$breakpointC2: 980px;
-$breakpointC3: 1080px;
-
-$customMenuCBreakpoint: 970px;
-
-// menu height
-$breakpointAHeight: 310px; //60vh;
-$breakpointAHeightFooter : 126px;
-$breakpointCHeight: 60px;
-
-#root {
-    overflow:hidden;
-}
+$red: #ea494d;
 
 // media query mixin
 @mixin mq($width, $height: false) {
@@ -34,4 +11,9 @@ $breakpointCHeight: 60px;
             @content;
         }
     }
+}
+
+main {
+	margin-top:42px;
+	margin-left:42px;
 }

@@ -1,25 +1,14 @@
 import { connect } from 'react-redux';
-import { toggleSetting } from '../../actions/actions';
 import Single from './Single';
 
 const mapStateToProps = (state) => {
   return {
-    buildings: state.buildings,
-    events: state.events
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleSetting: () => {
-      dispatch(toggleSetting());
-    },
+    // isNavOpen: state.isNavOpen,
   };
 };
 
 const SingleContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Single);
 
 export default SingleContainer;

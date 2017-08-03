@@ -3,12 +3,12 @@ import Header from './Header';
 
 const mapStateToProps = (state) => {
   return {
-    buildings: state.buildings,
+    // isNavOpen: state.isNavOpen,
   };
 };
 
 const HeaderContainer = connect(
-  mapStateToProps,
+  mapStateToProps
 )(Header);
 
 export default HeaderContainer;

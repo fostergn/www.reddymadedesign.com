@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Landing = ({}) => {
+const List = ({}) => {
 
   return (
 	<div>
-		Landing
+		List
 	</div>
   );
 }
 
-export default Landing;
+export default List;

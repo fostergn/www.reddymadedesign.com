@@ -34,5 +34,6 @@ EXPOSE 3000
 # Permissions and rewrites
 RUN a2enmod rewrite
 RUN usermod -u 1000 www-data
+RUN chmod 755 /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]

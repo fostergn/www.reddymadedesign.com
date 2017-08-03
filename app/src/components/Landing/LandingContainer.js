@@ -1,25 +1,14 @@
 import { connect } from 'react-redux';
-import { toggleSetting } from '../../actions/actions';
 import Landing from './Landing';
 
 const mapStateToProps = (state) => {
   return {
-    buildings: state.buildings,
-    events: state.events,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleSetting: () => {
-      dispatch(toggleSetting());
-    },
+    // isNavOpen: state.isNavOpen,
   };
 };
 
 const LandingContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Landing);
 
 export default LandingContainer;

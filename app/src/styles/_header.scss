@@ -1,0 +1,46 @@
+/* Header */
+.header {
+	&__container {
+		position:fixed;
+		top:0;
+		left:0;
+		height:42px;
+		width:100vw;
+		background-color:#ea494d;
+		color:#fff;
+	}
+
+	&__title {
+		position: absolute;
+	    left: 45px;
+	    height: 42px;
+	    vertical-align: middle;
+	    display: flex;
+	    align-items: center;
+	    text-transform:uppercase;
+	    letter-spacing: 1.2em;
+	    font-weight:bold;
+	}
+
+	&__nav {
+		height: inherit;
+
+		&-list {
+			display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    height: 100%;
+		    font-weight:100;
+		    font-size: 1em;
+		}
+
+		&-list-item {
+			&:nth-child(2) {
+				margin: 0 40px 0;
+			}
+		}
+		&-list-item--active {
+			font-weight:600;
+		}
+	}
+}

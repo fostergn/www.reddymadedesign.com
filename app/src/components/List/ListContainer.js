@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import App from './App';
+import List from './List';
 
 const mapStateToProps = (state) => {
   return {
@@ -7,8 +7,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const AppContainer = connect(
+const ListContainer = connect(
   mapStateToProps
-)(App);
+)(List);
 
-export default AppContainer;
+export default ListContainer;
