@@ -1,5 +1,12 @@
 $red: #ea494d;
 
+$vertical-margin-xl: 160px;
+$vertical-margin-l: 120px;
+$vertical-margin-m: 60px;
+$vertical-margin-s: 40px;
+$vertical-margin-xs: 30px;
+$title-margin: 15px;
+
 // media query mixin
 @mixin mq($width, $height: false) {
     @if $height {
@@ -16,4 +23,5 @@ $red: #ea494d;
 main {
 	margin-top:42px;
 	margin-left:42px;
+    overflow:hidden;
 }
