@@ -3,9 +3,9 @@ import React from 'react';
 const Landing = () => {
 
   return (
-	<div className="grid grid--34">
+	<div className="grid grid--36">
 		<p className="grid--landing-text">A leader in today's global design culture, Reddymade Architecture and Design was founded by Suchi Reddy in 2002. Since its inception the firm has been lauded for its formal experimentation, its imaginative use of color and passion for innovative materials.</p>
-		<div className="grid grid--34 grid--landing">
+		<div className="grid grid--36 grid--landing">
 
 			<div className="grid__column grid__column--landing grid__column--7">
 				<div className="grid__item grid__item--landing">
