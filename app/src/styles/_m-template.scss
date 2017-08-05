@@ -1,0 +1,15 @@
+.border {
+	position: fixed;
+    top: 0;
+    background-color:$red;
+    width:42px;
+    height:100vh;
+
+	&__middle {
+		left: calc(50% - 22px);
+	}
+	&__right {
+
+		right:0;
+	}
+}

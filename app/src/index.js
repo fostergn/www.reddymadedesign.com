@@ -6,6 +6,7 @@ import App from './components/App/AppContainer';
 import Single from './components/Single/SingleContainer';
 import Landing from './components/Landing/LandingContainer';
 import List from './components/List/ListContainer';
+import About from './components/About/AboutContainer';
 import { configureStore } from './store';
 import initialDispatch from './initialDispatch';
 
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route path="/" component={App} >
         <IndexRoute component={Landing} />
         <Route path="/:type/:id" component={Single} />
+        <Route path="/about" component={About} />
         <Route path="/list" component={List} />
       </Route>
       <Redirect from="**" to="/" />

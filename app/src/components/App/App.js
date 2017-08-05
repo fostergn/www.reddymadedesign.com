@@ -1,17 +1,12 @@
 import React from 'react';
 import '../../styles/styles.scss';
 import Header from '../Header/HeaderContainer';
-import classNames from 'classnames';
 
-const App = ({children}) => {
-
-  const gradientTopClass = classNames({
-    'gradient__hover--top': true,
-  });
+const App = ({children, location}) => {
 
   return (
     <div>
-    	<Header />
+    	<Header path={location.pathname} />
     	<main>
     		{children}
     	</main>

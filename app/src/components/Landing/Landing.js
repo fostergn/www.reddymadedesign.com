@@ -18,37 +18,53 @@ const Landing = () => {
 
 			<div className="grid__column grid__column--landing grid__column--7">
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 			</div>
 
 			<div className="grid__column grid__column--landing grid__column--10">
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 			</div>
 
-			<div className="grid__column grid__column--landing grid__column--5">
+			<div className="grid__column grid__column--landing grid__column--4">
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 			</div>
 
 			<div className="grid__column grid__column--landing grid__column--2">
 				<div className="grid__item grid__item--landing">
-					<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					<a href="/">
+						<img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/12thStreet-3-800x1200.jpg" alt=""/>
+					</a>
 				</div>
 			</div>
 		</div>
