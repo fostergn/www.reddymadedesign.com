@@ -13,3 +13,14 @@
 		right:0;
 	}
 }
+
+.template-half {
+	width:50%;
+	margin-right:42px;
+	display:grid;
+	grid-template-columns: repeat(20, 1fr);
+
+	&__container {
+		display:flex;
+	}
+}

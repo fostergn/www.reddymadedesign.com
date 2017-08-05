@@ -1,0 +1,33 @@
+.about-content {
+	&__container {
+		margin-top:$vertical-margin-s;
+		margin-bottom:$vertical-margin-s;
+		grid-column: 3 / span 16;
+		color:$red;
+	}
+	&__article {
+		&:nth-child(n+2) {
+			margin-top:$vertical-margin-m;
+		}
+	}
+	&__header {
+		margin-bottom:$title-margin;
+		font-size:1.3em;
+		line-height:1.5em;
+		font-weight:600;
+		letter-spacing:0.05em;
+	}
+	&__copy {
+		font-size:1em;
+		line-height:1.4em;
+		& p {
+			&:nth-child(n+2) {
+				text-indent:2em;
+			}
+		}
+	}
+}
+
+#google-map {
+	width: 85.71%
+}
