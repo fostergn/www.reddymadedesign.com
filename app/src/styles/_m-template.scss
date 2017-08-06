@@ -19,6 +19,8 @@
 	margin-right:42px;
 	display:grid;
 	grid-template-columns: repeat(20, 1fr);
+	overflow:scroll;
+	height:calc(100vh - #{$borderWidth});
 
 	&__container {
 		display:flex;

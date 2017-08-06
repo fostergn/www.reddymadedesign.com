@@ -18,13 +18,24 @@
 		letter-spacing:0.05em;
 	}
 	&__copy {
-		font-size:1em;
-		line-height:1.4em;
-		& p {
-			&:nth-child(n+2) {
-				text-indent:2em;
+		&--about {
+			& p {
+				&:nth-child(n+2) {
+					text-indent:2em;
+				}
 			}
 		}
+		font-size:1em;
+		line-height:1.4em;
+		&--margin:nth-of-type(n+2)  {
+			margin-top: $vertical-margin-s;
+		}
+	}
+	&__description {}
+	&__date, &__more {
+		text-transform:uppercase;
+		font-size:.67em;
+		letter-spacing:.05em;
 	}
 }
 

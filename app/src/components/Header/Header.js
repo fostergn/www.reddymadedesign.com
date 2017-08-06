@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const Header = ({path}) => {
 
-	const isActive = (location, name) => location === name;
+	const isActive = (location, name) => location.includes(name);
 
   const aboutClass = classNames({
     'header__nav-list-item': true,

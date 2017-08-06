@@ -16,7 +16,7 @@ const About = ({}) => {
 			<div className="about-content__container">
 				<article className="about-content__article">
 					<header className="about-content__header">Reddymade<br/>Architecture Design</header>
-					<div className="about-content__copy">
+					<div className="about-content__copy about-content__copy--about">
 						<p>The Women’s Building was conceived as a beacon in the Manhattan skyline rising to announce its important collaborative mission. The new building embraces the existing in ribbons of concrete and glass that flow together and emphasize notions of collaboration, transformation and power. Driven by the community needs it will serve, the Women’s Building has been designed as a visually strong fluent form that respects history and heritage, and translates it into dynamic interior spaces that encourage collaboration and community building.</p>
 						<p>Sheathed in ultra-high performance concrete and heat sensitive glass, the new building is an extension of its predecessor with its skin creating an auditorium and event space on the upper floors. This space is illuminated by a three story installation of reflective surfaces that will bring light from the roof into the depths of the building which was to be built and installed by girls and women.</p>
 						<p>The Women’s Building was envisioned as a celebratory building for the global girls’ and women’s rights movement. Enlarging and repurposing a former women’s prison in the heart of New York, we provide a remarkable space for one of the most underrepresented comminutes worldwide.</p>
@@ -25,7 +25,7 @@ const About = ({}) => {
 				</article>
 				<article className="about-content__article">
 					<header className="about-content__header">Suchi Reddy</header>
-					<div className="about-content__copy">
+					<div className="about-content__copy about-content__copy--about">
 						<p>The Women’s Building was conceived as a beacon in the Manhattan skyline rising to announce its important collaborative mission. The new building embraces the existing in ribbons of concrete and glass that flow together and emphasize notions of collaboration, transformation and power. Driven by the community needs it will serve, the Women’s Building has been designed as a visually strong fluent form that respects history and heritage, and translates it into dynamic interior spaces that encourage collaboration and community building.</p>
 						<p>Sheathed in ultra-high performance concrete and heat sensitive glass, the new building is an extension of its predecessor with its skin creating an auditorium and event space on the upper floors. This space is illuminated by a three story installation of reflective surfaces that will bring light from the roof into the depths of the building which was to be built and installed by girls and women.</p>
 						<p>The Women’s Building was envisioned as a celebratory building for the global girls’ and women’s rights movement. Enlarging and repurposing a former women’s prison in the heart of New York, we provide a remarkable space for one of the most underrepresented comminutes worldwide.</p>
