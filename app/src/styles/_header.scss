@@ -21,10 +21,15 @@
 	    text-transform:uppercase;
 	    letter-spacing: 1.2em;
 	    font-weight:bold;
+	    z-index:20;
 	}
 
 	&__nav {
+
 		height: inherit;
+		position:relative;
+		z-index:10;
+		background-color:$red;
 
 		&-list {
 			display: flex;
@@ -41,6 +46,69 @@
 			}
 		}
 		&-list-item--active {
+			font-weight:600;
+		}
+	}
+
+	&__filter-button {
+	    position: absolute;
+	    height: 100%;
+	    top: 0;
+	    right: 20px;
+	    display: flex;
+	    align-items: center;
+	    cursor:pointer;
+	}
+}
+
+.work-filters {
+	&__container {
+		height:40px;
+		color:$red;
+		border-bottom:2.5px solid $red;
+    	transition: all .2s;
+    	transform: translateY(-100%);
+    	margin-left:42px;
+    	background-color:#fff;
+
+    	&--active {
+    		transform: translateY(0%);
+    	}
+	}
+	&__view {
+		position: absolute;
+	    left: 5px;
+	    height: 40px;
+	    vertical-align: middle;
+	    display: flex;
+	    align-items: center;
+	}
+	&__view-item {
+
+		cursor:pointer;
+
+		&--active {
+			font-weight:600;
+		}
+	}
+	&__list {
+		width:100%;
+		height:100%;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	&__list-item {
+		margin: 0 30px 0;
+		cursor:pointer;
+
+		&:first-child {
+			margin-left:0;
+		}
+		&:last-child {
+			margin-right:0;
+		}
+		&--active {
 			font-weight:600;
 		}
 	}

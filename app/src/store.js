@@ -27,27 +27,9 @@ export function configureStore() {
     store = createStore(reducer, initializedState, applyMiddleware(...middleware));
   }
 
-  store.subscribe(throttle(() => {
-    const {buildings, events, archives, exhibitions, about, partners, sponsors, blogs, firstSession} = store.getState();
-    saveState({
-      buildings,
-      events,
-      archives,
-      exhibitions,
-      about,
-      partners,
-      sponsors,
-      blogs,
-      firstSession,
-      isNavOpen: false,
-      buildingsView: 'calendar',
-      buildingsFiltersVisible: true,
-      buildingsFilters: [],
-      eventsFilters: [],
-      mapFilters: [],
-      isMapLoaded: false,
-    });
-  }, 1000));
+  // store.subscribe(throttle(() => {
+  //   saveState(store.getState());
+  // }, 1000));
 
   return store;
 }

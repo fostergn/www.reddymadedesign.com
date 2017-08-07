@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import App from './components/App/AppContainer';
 import Single from './components/Single/SingleContainer';
 import Landing from './components/Landing/LandingContainer';
-import List from './components/List/ListContainer';
+import Work from './components/Work/WorkContainer';
 import About from './components/About/AboutContainer';
 import News from './components/News/NewsContainer';
 import { configureStore } from './store';
@@ -23,10 +23,10 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App} >
         <IndexRoute component={Landing} />
-        <Route path="/:type/:id" component={Single} />
+        <Route path="/work/:id" component={Single} />
         <Route path="/about" component={About} />
         <Route path="/news" component={News} />
-        <Route path="/list" component={List} />
+        <Route path="/work" component={Work} />
       </Route>
       <Redirect from="**" to="/" />
     </Router>

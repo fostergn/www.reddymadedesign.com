@@ -1,24 +1,23 @@
 import React from 'react';
 import classNames from 'classnames';
+import projects from '../../settings/projects';
 
-const Header = ({}) => {
+const Single = ({ location }) => {
 
-  const gradientTopClass = classNames({
-    'header': true,
-  })
+	const { pathname } = location;
+	const pathSlug = pathname.replace('/work/', '');
+
+	const project = projects.find(project => project.slug === pathSlug);
+
+	const { name, slug, description, images, primaryTag, secondaryTags } = project;
 
   return (
-	<div className="header__container">
-		<h1 className="header__title">Reddymade</h1>
-		<nav className="header__nav">
-			<ul className="header__nav-list">
-				<li className="header__nav-list-item">About</li>
-				<li className="header__nav-list-item header__nav-list-item--active">Work</li>
-				<li className="header__nav-list-item">News</li>
-			</ul>
-		</nav>
-	</div>
+		<div className="single__container">
+			<div className="single__hero">
+				<img src={images[0]} />
+			</div>
+		</div>
   );
 }
 
-export default Header;
+export default Single;

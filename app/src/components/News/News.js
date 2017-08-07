@@ -41,6 +41,26 @@ const News = ({}) => {
 							<p className="about-content__description">Suchi Reddy has been interviewed by the Wall Street Journal...</p>
 							<p className="about-content__more"><a href="#">Read More</a></p>
 						</div>
+						<div className="about-content__copy about-content__copy--margin">
+							<p className="about-content__date">06.20.2017</p>
+							<p className="about-content__description">Suchi Reddy has been interviewed by the Wall Street Journal...</p>
+							<p className="about-content__more"><a href="#">Read More</a></p>
+						</div>
+						<div className="about-content__copy about-content__copy--margin">
+							<p className="about-content__date">06.20.2017</p>
+							<p className="about-content__description">Suchi Reddy has been interviewed by the Wall Street Journal...</p>
+							<p className="about-content__more"><a href="#">Read More</a></p>
+						</div>
+						<div className="about-content__copy about-content__copy--margin">
+							<p className="about-content__date">06.20.2017</p>
+							<p className="about-content__description">Suchi Reddy has been interviewed by the Wall Street Journal...</p>
+							<p className="about-content__more"><a href="#">Read More</a></p>
+						</div>
+						<div className="about-content__copy about-content__copy--margin">
+							<p className="about-content__date">06.20.2017</p>
+							<p className="about-content__description">Suchi Reddy has been interviewed by the Wall Street Journal...</p>
+							<p className="about-content__more"><a href="#">Read More</a></p>
+						</div>
 					</article>
 				</div>
 			</div>

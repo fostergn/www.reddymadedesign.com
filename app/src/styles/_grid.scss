@@ -6,6 +6,14 @@
 		grid-template-columns: repeat(36, 1fr);
 	}
 
+	&--18 {
+		grid-template-columns: repeat(18, 1fr);
+	}
+
+	&--16 {
+		grid-template-columns: repeat(16, 1fr);
+	}
+
 	&--landing-text {
 		grid-column: 27 / span 9;
 		font-size: 1em;
