@@ -1,6 +1,6 @@
 import React from 'react';
 import List from '../List/ListContainer';
-import WorkGrid from './WorkGrid';
+import WorkGrid from '../Grid/GridContainer';
 import classNames from 'classnames';
 
 const Work = ({workView, workFilter, workFilterOpen}) => {
@@ -9,7 +9,7 @@ const Work = ({workView, workFilter, workFilterOpen}) => {
 
 	const workStyle = classNames({
 		'work__container': true,
-		'work__container--push': workFilterOpen
+		'work__container--push': workFilterOpen && workView === 'list'
 	})
 
   return (
