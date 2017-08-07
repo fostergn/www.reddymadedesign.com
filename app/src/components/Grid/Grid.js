@@ -39,6 +39,18 @@ const Grid = ({ workFilter, workView, quadrant, quadrantMode, updateQuadrant, up
 				<div className="quadrant__content quadrant__content--left">
 					<div className="quadrant__title">Architecture</div>
 					<div className="quadrant__close">close</div>
+					<div className="quadrant__images">
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/TWB-Ext-01_11TH-AVE-1600x1065.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2017/07/2.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/east-elevation-1-1600x1065.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/TWB-Ext-01_11TH-AVE-1600x1065.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/SR-dreammachine-058-1600x1065.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/10/plans-for-website_5and9-1600x1065.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/10/AERIAL-NEW-small-800x1200.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/44-Yulman-Int-Living-15-1600x1065.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/45-fifth_ruthie_03-800x740.jpg"/></div>
+						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/MG_8047-1-1600x1065.jpg"/></div>
+					</div>
 				</div>
 			</div>
 			<div
