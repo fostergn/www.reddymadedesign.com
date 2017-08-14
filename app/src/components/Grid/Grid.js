@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router';
 import projects from '../../settings/projects';
 
 const Grid = ({ workFilter, workView, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode}) => {
@@ -40,7 +41,7 @@ const Grid = ({ workFilter, workView, quadrant, quadrantMode, updateQuadrant, up
 					<div className="quadrant__title">Architecture</div>
 					<div className="quadrant__close">close</div>
 					<div className="quadrant__images">
-						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/TWB-Ext-01_11TH-AVE-1600x1065.jpg"/></div>
+						<Link to="/work/womens-building" className="quadrant__image"><div className="quadrant__image-hover"><div className="quadrant__image-title">Women's Building</div><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/TWB-Ext-01_11TH-AVE-1600x1065.jpg"/></div></Link>
 						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2017/07/2.jpg"/></div>
 						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/east-elevation-1-1600x1065.jpg"/></div>
 						<div className="quadrant__image"><img src="https://www.reddymadedesign.com/wp-content/uploads/sites/2/2016/06/Douglas-Friedman_Trunk-Archive-4.jpg"/></div>

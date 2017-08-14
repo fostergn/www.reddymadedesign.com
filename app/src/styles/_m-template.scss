@@ -6,7 +6,7 @@
     height:100vh;
 
 	&__middle {
-		left: calc(50% - 22px);
+		left: 50%;
 	}
 	&__right {
 
@@ -16,11 +16,19 @@
 
 .template-half {
 	width:50%;
-	margin-right:42px;
 	display:grid;
 	grid-template-columns: repeat(20, 1fr);
 	overflow:scroll;
 	height:calc(100vh - #{$borderWidth});
+	box-sizing:border-box;
+
+	&--left {
+	}
+
+	&--right {
+		padding-left: 42px;
+		margin-right: 42px;
+	}
 
 	&__container {
 		display:flex;

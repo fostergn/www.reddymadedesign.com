@@ -7,7 +7,7 @@
 		left:0;
 		height:42px;
 		width:100vw;
-		background-color:#ea494d;
+		background-color:$red;
 		color:#fff;
 	}
 
@@ -30,6 +30,7 @@
 		position:relative;
 		z-index:10;
 		background-color:$red;
+		padding-left:42px;
 
 		&-list {
 			display: flex;
