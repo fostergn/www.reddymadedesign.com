@@ -35,4 +35,4 @@ require_once(dirname(__FILE__) . '/admin/developer-dashboard-meta-box.php');
 
 /* Modular Functions */
 // require_once(dirname(__FILE__) . '/modules/{ YOUR_MODULE_HERE }.php');
-// require_once(dirname(__FILE__) . '/modules/geolocation.php');
+require_once(dirname(__FILE__) . '/modules/instagram.php');

@@ -12,17 +12,17 @@
 /* Building Post Type */
 function create_custom_post_types() {
 	custom_type_init(array(
-            'name'		=>	'building',
-            'singular'	=>	'Day of October Post Type',
-            'plural'	=>	'Days of October',
-            'menu_icon' =>  'dashicons-calendar-alt',
+            'name'		=>	'feature',
+            'singular'	=>	'Feature Post Type',
+            'plural'	=>	'Features',
+            // 'menu_icon' =>  'dashicons-calendar-alt',
             'taxonomies' => array('category', 'post_tag'))
     	);
 	custom_type_init(array(
-            'name'		=>	'event',
-            'singular'	=>	'Event Post Type',
-            'plural'	=>	'Events',
-            'menu_icon' =>  'dashicons-share',
+            'name'		=>	'project',
+            'singular'	=>	'Project Post Type',
+            'plural'	=>	'Projects',
+            // 'menu_icon' =>  'dashicons-share',
             'taxonomies' => array('category', 'post_tag'))
     	);
 }
