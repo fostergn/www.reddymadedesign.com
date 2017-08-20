@@ -4,18 +4,6 @@ import instafeed from 'instafeed';
 
 const Instagram = ({}) => {
 
-    // var feed = new instafeed({
-		  // get: 'user',
-		  // userId: '5709509421',
-    //   clientId: 'a93130dd466c4db89eef44d81e5c6475',
-    //   success: function(json) {
-    //   	console.log('json: ', json);
-    //   }
-    // });
-    // feed.run();
-
-    fetch('http://localhost/api/instagram.php').then(response => response.json()).then(json => console.log(json));
-
   return (
 		<div className="grid grid--16 grid--instagram">
 			<div className="instagram__image-container">

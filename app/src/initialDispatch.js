@@ -1,20 +1,13 @@
-// import { fetchPosts, fetchArchives, animateNav, markFirstSession } from './actions/actions';
+import { addInstagramImages, fetchPosts } from './actions/actions';
+import fetch from 'isomorphic-fetch';
 
 const initialDispatch = store => {
-	// store.dispatch(fetchPosts('posts'));
-	// store.dispatch(fetchPosts('partner'));
-	// store.dispatch(fetchPosts('sponsor'));
-	// store.dispatch(fetchPosts('building?per_page=100'));
-	// store.dispatch(fetchArchives(20, 1));
-	// store.dispatch(fetchPosts('event'));
-	// store.dispatch(fetchPosts('pages?slug=exhibitions'));
-	// store.dispatch(fetchPosts('pages?slug=about'));
 
-	// const { firstSession } = store.getState();
-	// if(firstSession) {
-	// 	store.dispatch(animateNav());
-	// 	store.dispatch(markFirstSession());
-	// }
+	fetch('http://localhost/api/instagram.php').then(response => response.json()).then(json => store.dispatch(addInstagramImages(json.items)));
+	store.dispatch(fetchPosts('feature?per_page=100'));
+	store.dispatch(fetchPosts('project?per_page=100'));
+	store.dispatch(fetchPosts('pages?slug=about'));
+	// store.dispatch(fetchArchives(20, 1));
 }
 
 export default initialDispatch;

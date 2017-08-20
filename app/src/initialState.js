@@ -1,5 +1,7 @@
 const initialState = {
   projects: [],
+  instagram: [],
+  features: [],
   workFilter: 'all', // all, architecture, products, collaborations, interior
   workFilterOpen: false, // boolean
   workView: 'grid', // 'list'
