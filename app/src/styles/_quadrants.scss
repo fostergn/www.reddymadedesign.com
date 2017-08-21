@@ -8,11 +8,12 @@
 
 	&__single {
 		position:absolute;
-		width:calc(50% - 1.75px);
-		height:calc(50% - 1.75px);
+	    width: calc(50% - 1px);
+	    height: calc(50% - 1px);
 		overflow:hidden;
 		transition: all .3s;
 		background-color:#fff;
+		box-sizing:content-box;
 
 		&--1 {
 			top:0;

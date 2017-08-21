@@ -1,14 +1,25 @@
 import { connect } from 'react-redux';
+import { toggleFullscreen } from '../../actions/actions';
 import Single from './Single';
 
 const mapStateToProps = (state) => {
   return {
-    // isNavOpen: state.isNavOpen,
+    projects: state.projects,
+    isFullscreen: state.isFullscreen,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleFullscreen: () => {
+      dispatch(toggleFullscreen());
+    },
   };
 };
 
 const SingleContainer = connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Single);
 
 export default SingleContainer;

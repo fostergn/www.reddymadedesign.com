@@ -3,6 +3,7 @@ import initialState from '../initialState';
 import {
     TOGGLE_FILTER_MENU,
     CHANGE_WORK_FILTER,
+    TOGGLE_FULLSCREEN,
     CHANGE_WORK_VIEW,
     UPDATE_QUADRANT,
     UPDATE_QUADRANT_MODE,
@@ -12,6 +13,11 @@ import {
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        case TOGGLE_FULLSCREEN:
+            return Object.assign({}, state, {
+                isFullscreen: !state.isFullscreen
+            });
 
         case ADD_INSTAGRAM_IMAGES:
             return Object.assign({}, state, {

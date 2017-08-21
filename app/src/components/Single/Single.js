@@ -1,32 +1,44 @@
 import React from 'react';
 import classNames from 'classnames';
-import projects from '../../settings/projects';
+// import projects from '../../settings/projects';
+import SmallCarousel from './SmallCarousel';
+import Fullscreen from './Fullscreen';
 
-const Single = ({ location }) => {
+const Single = ({ location, projects, isFullscreen, toggleFullscreen }) => {
+
+	if (projects.length < 1){ return <div>loading...</div>}
 
 	const { pathname } = location;
 	const pathSlug = pathname.replace('/work/', '');
 
-	const project = projects.find(project => project.slug === pathSlug);
+	const project = projects.find(project => {
+		console.log('project: ', project);
+		console.log('path slug: ', pathSlug);
+		return project.slug === pathSlug
+	});
 
-	const { name, slug, description, images, primaryTag, secondaryTags } = project;
+	console.log('project: ', project);
 
-	const allTags = [primaryTag, ...secondaryTags];
+	const { title, slug, hero_image, description, images, primary_tag, secondary_tags } = project.acf;
+
+	console.log('acf: ', project.acf);
+
+	const allTags = [primary_tag, ...secondary_tags];
 	const tags = allTags.join(', ');
 
   return (
 		<div className="single__container">
 			<div className="single__hero">
-				<img src={images[0]} />
+				<img src={hero_image.sizes.large} />
 			</div>
 			<div className="single__split">
 				<div className="single__split-left">
 					<div className="single__grid-left">
 						<div className="single__header">
-							<div className="single__title">{name}</div>
+							<div className="single__title">{title}</div>
 							<div className="single__tags">{tags}</div>
 						</div>
-						<div className="single__description">{description}</div>
+						<div className="single__description" dangerouslySetInnerHTML={{__html: description}}></div>
 						<div className="single__related">
 							<div className="single__related-title">Related Projects</div>
 							<p>Pool House</p>
@@ -36,12 +48,9 @@ const Single = ({ location }) => {
 						</div>
 					</div>
 				</div>
-				<div className="single__split-right">
-					<div className="single__image-container single__image-container--bg">
-						<img src={images[2]} />
-					</div>
-				</div>
+				<SmallCarousel images={images} toggleFullscreen={toggleFullscreen}/>
 			</div>
+			<Fullscreen isFullscreen={isFullscreen} images={images} toggleFullscreen={toggleFullscreen} />
 		</div>
   );
 }

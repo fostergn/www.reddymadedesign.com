@@ -1,4 +1,5 @@
 const initialState = {
+	about: [],
   projects: [],
   instagram: [],
   features: [],
@@ -6,7 +7,8 @@ const initialState = {
   workFilterOpen: false, // boolean
   workView: 'grid', // 'list'
   quadrantMode: 'none', // 'hover' || 'click'
-  quadrant: 'none' // 1, 2, 3, 4
+  quadrant: 'none', // 1, 2, 3, 4
+  isFullscreen: false,
 };
 
 export default initialState;

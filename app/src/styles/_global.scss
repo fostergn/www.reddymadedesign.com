@@ -9,6 +9,11 @@ $vertical-margin-s: 40px;
 $vertical-margin-xs: 30px;
 $title-margin: 15px;
 
+$breakpointB: 480px;
+$breakpointC: 768px;
+$breakpointD: 1260px;
+$breakpointE: 1800px;
+
 // media query mixin
 @mixin mq($width, $height: false) {
     @if $height {
@@ -26,4 +31,8 @@ main {
 	margin-top:42px;
 	margin-left:42px;
     overflow:hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }

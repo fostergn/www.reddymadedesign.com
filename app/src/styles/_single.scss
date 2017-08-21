@@ -28,6 +28,7 @@
 		position:relative;
 		line-height:1.4em;
 		padding-top: $vertical-margin-s;
+		overflow-y: scroll;
 	}
 	&__grid-left {
 		display:grid;
@@ -62,11 +63,16 @@
 	&__description{
 		grid-column: 3 / span 14;
 		grid-row: 2;
+		& > p:nth-child(n+2) {
+			text-indent:20px;
+		}
 	}
 	&__related{
 		grid-column: 3 / span 14;
 		grid-row: 3;
 		margin-top:$vertical-margin-m;
+		margin-bottom: $vertical-margin-s;
+
 		&-title {
 			font-weight: 600;
 			margin-bottom:20px;

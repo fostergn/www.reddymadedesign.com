@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Contact = () => {
+const Contact = ({facebook_url, instagram_url, linkedin_url}) => {
 
   return (
 	<article className="about-content__article">
-		<a href="#" target="_blank"><p className="about-content__copy">Facebook</p></a>
-		<a href="#" target="_blank"><p className="about-content__copy">Instagram</p></a>
-		<a href="#" target="_blank"><p className="about-content__copy">LinkedIn</p></a>
+		<a href={facebook_url} target="_blank"><p className="about-content__copy">Facebook</p></a>
+		<a href={instagram_url} target="_blank"><p className="about-content__copy">Instagram</p></a>
+		<a href={linkedin_url} target="_blank"><p className="about-content__copy">LinkedIn</p></a>
 
 		<br/>
 		<br/>

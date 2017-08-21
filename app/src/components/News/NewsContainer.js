@@ -3,7 +3,8 @@ import News from './News';
 
 const mapStateToProps = (state) => {
   return {
-    // isNavOpen: state.isNavOpen,
+    instagram: state.instagram,
+    features: state.features,
   };
 };
 

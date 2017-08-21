@@ -3,7 +3,7 @@ import About from './About';
 
 const mapStateToProps = (state) => {
   return {
-    // isNavOpen: state.isNavOpen,
+    about: state.about,
   };
 };
 
