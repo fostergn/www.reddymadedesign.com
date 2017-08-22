@@ -33,12 +33,16 @@
 		padding-left:42px;
 
 		&-list {
-			display: flex;
+			display: none;
 		    justify-content: center;
 		    align-items: center;
 		    height: 100%;
 		    font-weight:100;
 		    font-size: 1em;
+
+		    @include mq($breakpointC) {
+		    	display:flex;
+		    }
 		}
 
 		&-list-item {
@@ -49,6 +53,166 @@
 		&-list-item--active {
 			font-weight:600;
 		}
+	}
+
+	&__mobile-icon {
+	    position: absolute;
+	    right: 20px;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    z-index:20;
+
+	    &--inactive {display:none;}
+
+	    @include mq($breakpointC) {
+	    	display:none;
+	    }
+	}
+
+	&__mobile-close-icon {
+	    position: absolute;
+	    color:#fff;
+	    right: 20px;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    z-index:20;
+
+	    &--inactive {display:none;}
+
+		@include mq($breakpointC) {
+	    	display:none;
+	    }
+	}
+
+	&__mobile-quote {
+
+		display:block;
+		margin-top:$vertical-margin-l;
+		padding-right:60px;
+		line-height:1.2em;
+		font-size: 18px;
+		font-weight: 100;
+
+		& > span {
+			margin-top:4px;
+		}
+
+		@include mq($breakpointB) {
+			display:none;
+		}
+	}
+
+	&__mobile-cover {
+		position:absolute;
+		z-index:15;
+		background-color:$red;
+		top:0;
+		left:0;
+		width:100%;
+		height:42px;
+		display:none;
+
+		@include mq($breakpointB){display:block;}
+		@include mq($breakpointC){display:none;}
+	}
+
+	&__mobile-menu {
+	    position: absolute;
+	    width:100%;
+	    left: 0px;
+	    top: 42px;
+	    height:42px;
+	    padding-bottom: 30px;
+    	padding-top: 10px;
+	    transform: translateY(-100%);
+	    transition: transform .2s;
+	    background-color:$red;
+	    display:flex;
+	    padding-left:47px;
+	    justify-content:space-between;
+	    align-items:flex-start;
+
+	    @include mq($breakpointB) {
+	    	align-items:center;
+	    }
+
+	    & > ul {
+	    	display:flex;
+	    	flex-direction:column;
+	    	font-size:2em;
+
+	    	@include mq($breakpointB){flex-direction:row;font-size:1em;}
+
+	    	&:nth-child(2){
+	    		padding:0 60px;
+	    		flex-direction:row;
+	    		position: absolute;
+    			bottom: 30px;
+    			left:0;
+    			width: 100vw;
+    			justify-content: space-between;
+    			font-size:1em;
+
+    			@include mq($breakpointB) {
+
+    				padding: 0 20px 0 0;
+					position:relative;
+					bottom:0;
+					width:auto;
+					justify-content:flex-start;
+    			}
+	    	}
+	    }
+
+	    .sidebar__list-item {
+	    	margin-bottom:0;
+
+	    	&:nth-child(2){
+	    		padding: 0 60px;
+	    		@include mq($breakpointB){
+	    			padding: 0 40px;
+	    		}
+	    	}
+
+	    	& img {
+	    		width:30px;
+	    		height:30px;
+
+	    		@include mq($breakpointB) {
+	    			width:20px;
+	    			height:20px;
+	    		}
+	    	}
+	    }
+
+	    &--active {
+			transform: translateY(0%);
+			height:calc(100vh - 42px);
+
+			@include mq($breakpointB) {
+				height:42px;
+			}
+	    }
+
+	    &--inactive {
+	    	& > ul {
+	    		display:none;
+	    	}
+	    }
+
+	    & .header__nav-list-item {
+	    	&:nth-child(2) {
+				margin: $vertical-margin-m 0;
+
+				@include mq($breakpointB) {
+					margin: 0 90px 0;
+				}
+			}
+	    }
+
+	    @include mq($breakpointC) {
+	    	display:none;
+	    }
 	}
 
 	&__filter-button {

@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export const TOGGLE_FILTER_MENU = 'TOGGLE_FILTER_MENU'
+export const TOGGLE_MENU = 'TOGGLE_MENU'
 export const TOGGLE_FULLSCREEN = 'TOGGLE_FULLSCREEN'
 export const CHANGE_WORK_FILTER = 'CHANGE_WORK_FILTER'
 export const CHANGE_WORK_VIEW = 'CHANGE_WORK_VIEW'
@@ -15,6 +16,12 @@ const baseUrl = process.env.NODE_ENV !== 'production' ? `http://localhost/api` :
 export function toggleFullscreen(){
     return {
         type: TOGGLE_FULLSCREEN
+    }
+}
+
+export function toggleMenu(){
+    return {
+        type: TOGGLE_MENU
     }
 }
 

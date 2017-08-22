@@ -4,8 +4,12 @@ import FilterButton from './FilterButton';
 import WorkFilters from './WorkFilters';
 import classNames from 'classnames';
 import { Link } from 'react-router';
+import facebook from '../../images/facebook.svg';
+import instagram from '../../images/instagram.svg';
+import linkedin from '../../images/linkedin.svg';
+import hamburger from '../../images/hamburger.svg';
 
-const Header = ({path, workFilterOpen, toggleFilterMenu, workView, changeWorkFilter, workFilter, changeWorkView}) => {
+const Header = ({path, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeWorkFilter, workFilter, changeWorkView}) => {
 
 	const isActive = (location, name) => location.includes(name);
 
@@ -24,6 +28,22 @@ const Header = ({path, workFilterOpen, toggleFilterMenu, workView, changeWorkFil
     'header__nav-list-item--active': isActive(path, 'news'),
   });
 
+  const mobileMenuClass = classNames({
+    'header__mobile-menu': true,
+    'header__mobile-menu--active': menuOpen,
+    'header__mobile-menu--inactive': !menuOpen,
+  });
+
+  const mobileMenuIconClass = classNames({
+    'header__mobile-icon': true,
+    'header__mobile-icon--inactive': menuOpen,
+  });
+
+  const mobileMenuCloseIconClass = classNames({
+    'header__mobile-close-icon': true,
+    'header__mobile-close-icon--inactive': !menuOpen,
+  });
+
   const filterButton = ['/work', 'work', 'list'].includes(path) ? <FilterButton toggleFilterMenu={toggleFilterMenu} workFilterOpen={workFilterOpen}/> : '';
 
   return (
@@ -36,6 +56,25 @@ const Header = ({path, workFilterOpen, toggleFilterMenu, workView, changeWorkFil
 					<li className={workClass}><Link to="/work">Work</Link></li>
 					<li className={newsClass}><Link to="/news">News</Link></li>
 				</ul>
+        <div className="header__mobile-cover"></div>
+        <img onClick={() => toggleMenu()} className={mobileMenuIconClass} style={{width:20}} src={hamburger}></img>
+        <p onClick={() => toggleMenu()} className={mobileMenuCloseIconClass} style={{width:'auto'}}>close</p>
+        <ul className={mobileMenuClass}>
+          <ul>
+            <li className={aboutClass}><Link to="/about">About</Link></li>
+            <li className={workClass}><Link to="/work">Work</Link></li>
+            <li className={newsClass}><Link to="/news">News</Link></li>
+            <p className="header__mobile-quote">
+              Integer mcomonorous volupat. Sed norril eleifend ipsum dolor toro tellus sprilltium lorum dolor isctap <br/>
+              <span>&mdash; Suchi Reddy</span>
+            </p>
+          </ul>
+          <ul className="mobile__sidebar">
+            <li className="sidebar__list-item"><img src={facebook}/></li>
+            <li className="sidebar__list-item"><img src={instagram}/></li>
+            <li className="sidebar__list-item"><img src={linkedin}/></li>
+          </ul>
+        </ul>
         {filterButton}
 			</nav>
       <WorkFilters changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} workFilter={workFilter} workView={workView} changeWorkFilter={changeWorkFilter}/>

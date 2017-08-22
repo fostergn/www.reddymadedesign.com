@@ -9,6 +9,7 @@ const initialState = {
   quadrantMode: 'none', // 'hover' || 'click'
   quadrant: 'none', // 1, 2, 3, 4
   isFullscreen: false,
+  menuOpen: false,
 };
 
 export default initialState;

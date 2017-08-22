@@ -9,6 +9,7 @@ import {
     UPDATE_QUADRANT_MODE,
     ADD_INSTAGRAM_IMAGES,
     RECEIVE_POSTS,
+    TOGGLE_MENU,
 } from '../actions/actions';
 
 const rootReducer = (state = initialState, action) => {
@@ -17,6 +18,11 @@ const rootReducer = (state = initialState, action) => {
         case TOGGLE_FULLSCREEN:
             return Object.assign({}, state, {
                 isFullscreen: !state.isFullscreen
+            });
+
+        case TOGGLE_MENU:
+            return Object.assign({}, state, {
+                menuOpen: !state.menuOpen
             });
 
         case ADD_INSTAGRAM_IMAGES:
