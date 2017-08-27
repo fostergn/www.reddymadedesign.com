@@ -20,5 +20,3 @@ function carbon_acf_json_load_point($paths) {
     return $paths;
 }
 add_filter('acf/settings/load_json', 'carbon_acf_json_load_point');
-
-// 211663601.a93130d.08e9730cf14f4e3998072b9f0948db3c

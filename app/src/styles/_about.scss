@@ -2,12 +2,47 @@
 	&__container {
 		margin-top:$vertical-margin-s;
 		margin-bottom:$vertical-margin-s;
-		grid-column: 3 / span 16;
+		grid-column: 2 / span 19;
 		color:$red;
+		padding-right: 10px;
+
+		@include mq($breakpointB) {
+			grid-column: 2 / span 15;
+    		// grid-column: 3 / span 14;
+			padding-right:0px;
+		}
+
+		@include mq($breakpointC) {
+			grid-column: 3 / span 16;
+		}
+
+		&--instagram {
+			padding-right: 0;
+    		grid-column: 2 / span 18;
+
+			@include mq($breakpointB) {
+				grid-column: 2 / span 18;
+			}
+		}
 	}
 	&__article {
+		// display:none;
+
 		&:nth-child(n+2) {
 			margin-top:$vertical-margin-m;
+		}
+
+		&--staff {
+
+			display:none;
+
+			&[data-staff="Suchi Reddy"] {
+				display:block;
+			}
+
+			@include mq($breakpointC) {
+				display:block;
+			}
 		}
 	}
 	&__header {
@@ -40,5 +75,20 @@
 }
 
 #google-map {
-	width: 85.71%
+	width: 100%;
+	height:180px;
+
+	@include mq($breakpointB) {
+		height:310px;
+		width: 110%;
+	}
+
+	@include mq($breakpointC) {
+		height:220px;
+		// width: 100%
+	}
+
+	@include mq($breakpointC) {
+		width: 85.71%
+	}
 }

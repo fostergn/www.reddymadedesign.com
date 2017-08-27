@@ -10,6 +10,7 @@ import About from './components/About/AboutContainer';
 import News from './components/News/NewsContainer';
 import { configureStore } from './store';
 import initialDispatch from './initialDispatch';
+import { toggleMenu } from './actions/actions';
 
 // Initialize store
 const store = configureStore();
@@ -17,6 +18,17 @@ const mountApp = document.getElementById('root');
 
 // Initial AJAX requests
 initialDispatch(store);
+
+browserHistory.listen( location =>  {
+
+  console.log('lcation: ', location);
+  console.log('store: ', store.getState().menuOpen);
+
+  if(store.getState().menuOpen) {
+
+    store.dispatch(toggleMenu());
+  }
+});
 
 ReactDOM.render(
   <Provider store={store}>

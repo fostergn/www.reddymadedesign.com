@@ -4,6 +4,12 @@
     background-color:$red;
     width:42px;
     height:100vh;
+    display:none;
+
+	@include mq($breakpointC){
+
+		display:block;
+	}
 
 	&__middle {
 		left: 50%;
@@ -15,22 +21,47 @@
 }
 
 .template-half {
-	width:50%;
+	width:100%;
 	display:grid;
 	grid-template-columns: repeat(20, 1fr);
-	overflow:scroll;
-	height:calc(100vh - #{$borderWidth});
+	overflow:auto;
+	height:auto;
 	box-sizing:border-box;
 
+	@include mq($breakpointC){
+
+		width:50%;
+		overflow:scroll;
+		height:calc(100vh - #{$borderWidth});
+	}
+
 	&--left {
+
+		border-bottom: 2px solid $red;
+
+		@include mq($breakpointC){
+
+			border-bottom: 0px;
+		}
 	}
 
 	&--right {
-		padding-left: 42px;
+		padding-left: 0px;
 		margin-right: 42px;
+
+		@include mq($breakpointC){
+
+			padding-left: 42px;
+		}
 	}
 
 	&__container {
-		display:flex;
+
+		display:block;
+
+		@include mq($breakpointC){
+
+			display:flex;
+		}
 	}
 }

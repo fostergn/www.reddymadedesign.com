@@ -4,7 +4,14 @@
 
 .instagram {
 	&__image-container {
-		grid-column-end: span 8;
+		grid-column-end: span 16;
+
+		@include mq($breakpointB){
+
+			grid-column-end: span 8;
+		}
+
+		@include mq($breakpointC){}
 
 		& > img {
 			width:100%;

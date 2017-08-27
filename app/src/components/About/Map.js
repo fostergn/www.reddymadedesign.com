@@ -22,7 +22,7 @@ class Map extends Component {
     render () {
 
 			return (
-				<div style={{marginTop: 30, height:220}} id="google-map"></div>
+				<div style={{marginTop: 30}} id="google-map"></div>
 			);
     }
 }

@@ -19,7 +19,7 @@ const News = ({ instagram, features }) => {
 				</div>
 			</div>
 			<div className="template-half template-half--right">
-				<div className="about-content__container">
+				<div className="about-content__container about-content__container--instagram">
 					<Instagram instagram={instagram} />
 				</div>
 			</div>
