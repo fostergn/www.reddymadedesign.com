@@ -3,10 +3,12 @@ import projects from '../../settings/projects';
 import ListItemText from './ListItem';
 import ListItemImage from './ListItemImage';
 
-const List = ({workFilter}) => {
+const List = ({workFilter, projects, listFilter}) => {
 
-	const itemsTextList = projects.map(project => <ListItemText workFilter={workFilter} project={project}/>);
-	const itemImageList = projects.map(project => <ListItemImage workFilter={workFilter} project={project}/>);
+	if (projects.length === 0) {return <div>Loading...</div>}
+
+	const itemsTextList = projects.filter(project => [...project.acf.secondary_tags, project.acf.primary_tag].some(a => listFilter.includes(a))).map(project => <ListItemText workFilter={workFilter} project={project.acf}/>);
+	const itemImageList = projects.filter(project => [...project.acf.secondary_tags, project.acf.primary_tag].some(a => listFilter.includes(a))).map(project => <ListItemImage workFilter={workFilter} project={project.acf}/>);
 
   return (
 		<div className="list__container">

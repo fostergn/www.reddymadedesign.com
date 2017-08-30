@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const WorkFilters = ({path, workFilterOpen, workView, changeWorkView, changeWorkFilter, workFilter}) => {
+const WorkFilters = ({path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter}) => {
 
 	const filterContainerClass = classNames({
 		'work-filters__container': true,
@@ -19,10 +19,17 @@ const WorkFilters = ({path, workFilterOpen, workView, changeWorkView, changeWork
 	});
 
 	const filterClass = (filter) => {
+
+		const isWorkFilterActive = workView === 'grid' ? gridFilter === filter : ( (filter === 'all' && listFilter.length === 0) ? true : listFilter.includes(filter))
+
 		return classNames({
 			'work-filters__list-item': true,
-			'work-filters__list-item--active': workFilter === filter
+			'work-filters__list-item--active': isWorkFilterActive
 		});
+	}
+
+	const handleClick = (filter, view) => {
+		return view === 'grid' ? changeGridFilter(filter) : changeListFilter(filter)
 	}
 
   return (
@@ -33,11 +40,11 @@ const WorkFilters = ({path, workFilterOpen, workView, changeWorkView, changeWork
         		<div className={listClass} onClick={() => changeWorkView('list')}>List</div>
         	</div>
         	<ul className="work-filters__list">
-        		<li onClick={() => changeWorkFilter('all')} className={filterClass('all')}>All</li>
-        		<li onClick={() => changeWorkFilter('architecture')} className={filterClass('architecture')}>Architecture</li>
-        		<li onClick={() => changeWorkFilter('products')} className={filterClass('products')}>Products</li>
-        		<li onClick={() => changeWorkFilter('collaborations')} className={filterClass('collaborations')}>Collaborations</li>
-        		<li onClick={() => changeWorkFilter('interior')} className={filterClass('interior')}>Interior Design</li>
+        		<li onClick={() => handleClick('all', workView)} className={filterClass('all')}>All</li>
+        		<li onClick={() => handleClick('architecture', workView)} className={filterClass('architecture')}>Architecture</li>
+        		<li onClick={() => handleClick('products', workView)} className={filterClass('products')}>Products</li>
+        		<li onClick={() => handleClick('collaborations', workView)} className={filterClass('collaborations')}>Collaborations</li>
+        		<li onClick={() => handleClick('interior', workView)} className={filterClass('interior')}>Interior Design</li>
         	</ul>
         </div>
   );

@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import Grid from './Grid';
-import { updateQuadrant, updateQuadrantMode } from '../../actions/actions'
+import { updateQuadrant, updateQuadrantMode, changeGridFilter } from '../../actions/actions'
 
 const mapStateToProps = (state) => {
   return {
+    projects: state.projects,
     workFilterOpen: state.workFilterOpen,
     workView: state.workView,
-    workFilter: state.workFilter,
+    gridFilter: state.gridFilter,
     quadrant: state.quadrant,
     quadrantMode: state.quadrantMode,
   };
@@ -19,6 +20,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     updateQuadrantMode: (mode) => {
       dispatch(updateQuadrantMode(mode));
+    },
+    changeGridFilter: (filter) => {
+      dispatch(changeGridFilter(filter));
     },
   };
 };

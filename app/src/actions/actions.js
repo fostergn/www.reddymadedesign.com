@@ -3,7 +3,8 @@ import fetch from 'isomorphic-fetch'
 export const TOGGLE_FILTER_MENU = 'TOGGLE_FILTER_MENU'
 export const TOGGLE_MENU = 'TOGGLE_MENU'
 export const TOGGLE_FULLSCREEN = 'TOGGLE_FULLSCREEN'
-export const CHANGE_WORK_FILTER = 'CHANGE_WORK_FILTER'
+export const CHANGE_GRID_FILTER = 'CHANGE_GRID_FILTER'
+export const CHANGE_LIST_FILTER = 'CHANGE_LIST_FILTER'
 export const CHANGE_WORK_VIEW = 'CHANGE_WORK_VIEW'
 export const UPDATE_QUADRANT = 'UPDATE_QUADRANT'
 export const UPDATE_QUADRANT_MODE = 'UPDATE_QUADRANT_MODE'
@@ -38,9 +39,16 @@ export function toggleFilterMenu(){
     }
 }
 
-export function changeWorkFilter(filter){
+export function changeGridFilter(filter){
     return {
-        type: CHANGE_WORK_FILTER,
+        type: CHANGE_GRID_FILTER,
+        filter
+    }
+}
+
+export function changeListFilter(filter){
+    return {
+        type: CHANGE_LIST_FILTER,
         filter
     }
 }

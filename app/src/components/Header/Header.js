@@ -9,7 +9,7 @@ import instagram from '../../images/instagram.svg';
 import linkedin from '../../images/linkedin.svg';
 import hamburger from '../../images/hamburger.svg';
 
-const Header = ({path, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeWorkFilter, workFilter, changeWorkView}) => {
+const Header = ({path, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeGridFilter, changeListFilter, gridFilter, listFilter, changeWorkView}) => {
 
 	const isActive = (location, name) => location.includes(name);
 
@@ -77,7 +77,7 @@ const Header = ({path, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, w
         </ul>
         {filterButton}
 			</nav>
-      <WorkFilters changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} workFilter={workFilter} workView={workView} changeWorkFilter={changeWorkFilter}/>
+      <WorkFilters changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} listFilter={listFilter} gridFilter={gridFilter} workView={workView} changeListFilter={changeListFilter} changeGridFilter={changeGridFilter}/>
 		</div>
 		<Sidebar />
 	</div>

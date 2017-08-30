@@ -2,7 +2,8 @@ import initialState from '../initialState';
 
 import {
     TOGGLE_FILTER_MENU,
-    CHANGE_WORK_FILTER,
+    CHANGE_GRID_FILTER,
+    CHANGE_LIST_FILTER,
     TOGGLE_FULLSCREEN,
     CHANGE_WORK_VIEW,
     UPDATE_QUADRANT,
@@ -35,9 +36,14 @@ const rootReducer = (state = initialState, action) => {
                 workFilterOpen: !state.workFilterOpen
             });
 
-        case CHANGE_WORK_FILTER:
+        case CHANGE_GRID_FILTER:
             return Object.assign({}, state, {
-                workFilter: action.filter
+                gridFilter: action.filter
+            });
+
+        case CHANGE_LIST_FILTER:
+            return Object.assign({}, state, {
+                listFilter: action.filter === 'all' ? [] : [...state.listFilter, action.filter]
             });
 
         case CHANGE_WORK_VIEW:

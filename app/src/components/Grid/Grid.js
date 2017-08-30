@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import projects from '../../settings/projects';
 import GridQuadrant from './GridQuadrant';
 
-const Grid = ({ workFilter, workView, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode}) => {
+const Grid = ({ projects, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode}) => {
 
 	const handleMouseEnter = (quadrant) => {
 		updateQuadrantMode('hover');
@@ -30,12 +30,19 @@ const Grid = ({ workFilter, workView, quadrant, quadrantMode, updateQuadrant, up
 		});
 	}
 
+	const architectureProjects = projects.filter((project) => project.acf.primary_tag === "architecture");
+	const productsProjects = projects.filter((project) => project.acf.primary_tag === "products");
+	const collaborationsProjects = projects.filter((project) => project.acf.primary_tag === "collaborations");
+	const interiorProjects = projects.filter((project) => project.acf.primary_tag === "interior");
+
+	console.log('arch projects: ', architectureProjects);
+
   return (
 		<div className="quadrant__container">
-			<GridQuadrant category="Architecture" quadrantNumber={1} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-			<GridQuadrant category="Products" quadrantNumber={2} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-			<GridQuadrant category="Collaborations" quadrantNumber={3} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-			<GridQuadrant category="Interior Design" quadrantNumber={3} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={architectureProjects} category="Architecture" quadrantNumber={1} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={productsProjects} category="Products" quadrantNumber={2} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={collaborationsProjects} category="Collaborations" quadrantNumber={3} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={interiorProjects} category="Interior Design" quadrantNumber={4} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
 		</div>
   );
 }

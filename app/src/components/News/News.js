@@ -5,7 +5,10 @@ import Feature from './FeatureSingle';
 
 const News = ({ instagram, features }) => {
 
-	const featuresList = features.map(feature => <Feature feature={feature} />);
+	const featuresList = features.map(feature => <Feature key={feature.date} feature={feature} />);
+
+		console.log('features: ', features);
+		console.log('list: ', featuresList);
 
   return (
 		<div className="template-half__container">

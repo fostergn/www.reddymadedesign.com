@@ -14,7 +14,7 @@ const About = ({about}) => {
 
 	const { description, staff, facebook_url, instagram_url, linkedin_url } = about[0].acf;
 
-	const staffBioList = staff.map(member => <StaffBio member={member} />);
+	const staffBioList = [staff[0]].map(member => <StaffBio member={member} />);
 
   return (
 	<div className="template-half__container">
