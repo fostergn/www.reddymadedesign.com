@@ -1,3 +1,10 @@
+@keyframes slider {
+    0% {transform: translateX(0%)}
+    49% {transform: translateX(-100%)}
+    50% {transform: translateX(-100%)}
+    100% {transform: translateX(100%)}
+}
+
 .gallery {
 	&__wrapper {
 		position:relative;
@@ -6,6 +13,16 @@
 		grid-row: 2;
 		height:100%;
 		width:100%;
+		&:before {
+			z-index:3;
+			content:'';
+			width:100%;
+			height:100%;
+			position:absolute;
+			top:0;
+			left:0;
+			background-color:#fff;
+		}
 		// margin-top:50px;
 		@include mq($breakpointB){
 			margin-top:0px;
@@ -46,15 +63,17 @@
 	&__image-wrapper {
 		width:100%;
 		height:100%;
-		opacity:0;
-		transition: opacity .5s;
+		// opacity:0;
+		transition: transform .5s;
 		position:absolute;
 		z-index:4;
 		top:0;
+		transform:translateX(-100%);
 
 		&--active {
 			opacity:1;
 			z-index:5;
+			transform:translateX(0%);
 		}
 	}
 	&__image-figure {
@@ -116,4 +135,19 @@
 	&__fullscreen {
 		cursor:pointer;
 	}
+}
+
+// .gallery__image-wrapper:last-of-type.gallery__image-wrapper--active {
+// 	border:6px solid red;
+// }
+
+.gallery__image-wrapper--active {
+	transform:translateX(0%);
+}
+.gallery__image-wrapper--prev {
+	transform:translateX(-100%);
+}
+.gallery__image-wrapper--next {
+	transform:translateX(100%);
+	z-index:2;
 }

@@ -1,11 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const SingleImage = ({ img, position, caption, show, toggleFullscreen }) => {
+const SingleImage = ({ img, position, caption, show, next, prev, toggleFullscreen }) => {
 
 	const wrapperClasses = classNames({
 		'gallery__image-wrapper' : true,
 		'gallery__image-wrapper--active' : show,
+		'gallery__image-wrapper--next' : next,
+		'gallery__image-wrapper--prev' : prev,
 	});
 
 	const imageClasses = classNames({

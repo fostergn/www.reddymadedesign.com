@@ -34,6 +34,7 @@ export default class Fullscreen extends Component {
 
 		const imageList = this.props.images.map((img, i, array) => {
 					if (img.image.sizes) {
+						console.log('image: ', img.image.sizes);
 						return (
 							<FullscreenSingle
 								fullscreen={this}
@@ -45,7 +46,9 @@ export default class Fullscreen extends Component {
 								total={array.length}
 								caption={img.caption}
 								toggleFullscreen={this.props.toggleFullscreen}
-								img={img.image.sizes.large} />
+								img={img.image.sizes.large}
+								isLandscape={img.image.sizes['large-width'] > img.image.sizes['large-height']}
+							/>
 						)
 					}
 		})

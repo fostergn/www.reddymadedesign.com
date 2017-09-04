@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const SingleImage = ({ img, position, total, caption, show, nextImage, prevImage, fullscreen, toggleFullscreen }) => {
+const SingleImage = ({ img, position, total, caption, show, nextImage, prevImage, isLandscape, fullscreen, toggleFullscreen }) => {
 
 	const wrapperClasses = classNames({
 		'fullscreen__image-wrapper' : true,
@@ -10,7 +10,7 @@ const SingleImage = ({ img, position, total, caption, show, nextImage, prevImage
 
 	const imageClasses = classNames({
 		'fullscreen__image' : true,
-		'fullscreen__image--bg' : position === 1,
+		'fullscreen__image--bg' : isLandscape,
 	});
 
 	const captionClasses = classNames({

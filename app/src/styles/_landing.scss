@@ -1,0 +1,47 @@
+.quadrant__single--landing {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	cursor:pointer;
+}
+
+.quadrant__single--landing > img {
+	object-fit:cover;
+	width:100%;
+	height:100%;
+}
+
+.quadrant__single--landing > p {
+	width:80%;
+	font-size:18px;
+}
+
+.quadrant__single--landing span {
+	float:right;
+}
+
+.quadrant__single--image {
+
+	&:after {
+		content:'';
+		width:100%;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		background-color:rgb(255,51,68);
+		opacity:0;
+		transition: all .2s;
+	}
+
+	&:hover:after {
+		opacity:.3;
+	}
+
+}
+
+.quadrant__single--quote {
+	&:hover .read-more {
+		font-weight:600;
+	}
+}

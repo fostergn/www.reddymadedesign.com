@@ -1,27 +1,27 @@
 import React from 'react';
 import classNames from 'classnames';
-// import projects from '../../settings/projects';
+import RelatedProject from './RelatedProject';
 import SmallCarousel from './SmallCarousel';
 import Fullscreen from './Fullscreen';
+import Link from 'react-router';
+import $ from 'jquery';
 
 const Single = ({ location, projects, isFullscreen, toggleFullscreen }) => {
 
 	if (projects.length < 1){ return <div>loading...</div>}
 
+	$('body').animate({ scrollTop: 0});
+
 	const { pathname } = location;
 	const pathSlug = pathname.replace('/work/', '');
 
 	const project = projects.find(project => {
-		console.log('project: ', project);
-		console.log('path slug: ', pathSlug);
 		return project.slug === pathSlug
 	});
 
-	console.log('project: ', project);
+	const { title, hero_image, description, images, primary_tag, secondary_tags, related_projects } = project.acf;
 
-	const { title, slug, hero_image, description, images, primary_tag, secondary_tags } = project.acf;
-
-	console.log('acf: ', project.acf);
+	const relatedProjects = related_projects[0].project.map(project => <RelatedProject key={project.ID} projects={projects} project={project} />)
 
 	const allTags = [primary_tag, ...secondary_tags];
 	const tags = allTags.join(', ');
@@ -41,10 +41,7 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen }) => {
 						<div className="single__description" dangerouslySetInnerHTML={{__html: description}}></div>
 						<div className="single__related">
 							<div className="single__related-title">Related Projects</div>
-							<p>Pool House</p>
-							<p>Prince Street Loft</p>
-							<p>The Women's Building</p>
-							<p>Doug's House</p>
+							{relatedProjects}
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const WorkFilters = ({path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter}) => {
+const WorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter}) => {
 
 	const filterContainerClass = classNames({
 		'work-filters__container': true,
@@ -29,7 +29,16 @@ const WorkFilters = ({path, workFilterOpen, workView, changeWorkView, changeGrid
 	}
 
 	const handleClick = (filter, view) => {
-		return view === 'grid' ? changeGridFilter(filter) : changeListFilter(filter)
+		if (view === 'grid') {
+			changeGridFilter(filter);
+			updateQuadrantMode('click');
+			updateQuadrant(filter);
+
+		} else {
+			// list view
+			changeListFilter(filter)
+
+		}
 	}
 
   return (

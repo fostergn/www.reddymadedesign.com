@@ -41,7 +41,8 @@
 			}
 
 			@include mq($breakpointC) {
-				display:block;
+				// display:block;
+				display:none;
 			}
 		}
 	}
@@ -64,6 +65,9 @@
 		line-height:1.4em;
 		&--margin:nth-of-type(n+2)  {
 			margin-top: $vertical-margin-s;
+		}
+		&--Suchi {
+			cursor: pointer;
 		}
 	}
 	&__description {}

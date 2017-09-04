@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Header from './Header';
-import { toggleFilterMenu, changeGridFilter, changeListFilter, changeWorkView, toggleMenu} from '../../actions/actions';
+import { updateQuadrant, updateQuadrantMode, toggleFilterMenu, changeGridFilter, changeListFilter, changeWorkView, toggleMenu} from '../../actions/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -28,6 +28,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     changeWorkView: (view) => {
       dispatch(changeWorkView(view));
+    },
+    updateQuadrant: (quadrant) => {
+      dispatch(updateQuadrant(quadrant));
+    },
+    updateQuadrantMode: (mode) => {
+      dispatch(updateQuadrantMode(mode));
     },
   };
 };

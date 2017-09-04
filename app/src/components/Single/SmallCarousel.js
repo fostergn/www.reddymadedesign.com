@@ -30,6 +30,8 @@ export default class SingleImageList extends Component {
 							<SingleImage
 								nextImage={this._nextImage}
 								key={img.image.sizes.large}
+								prev={this.state.imageCounter - 2 === (i) || (this.state.imageCounter === 1 && i + 1 === array.length)}
+								next={this.state.imageCounter === (i) || (this.state.imageCounter === array.length && i === 0)}
 								show={this.state.imageCounter === (i+1)}
 								position={i+1}
 								total={array.length}

@@ -35,14 +35,12 @@ const Grid = ({ projects, quadrant, quadrantMode, updateQuadrant, updateQuadrant
 	const collaborationsProjects = projects.filter((project) => project.acf.primary_tag === "collaborations");
 	const interiorProjects = projects.filter((project) => project.acf.primary_tag === "interior");
 
-	console.log('arch projects: ', architectureProjects);
-
   return (
 		<div className="quadrant__container">
-			<GridQuadrant projects={architectureProjects} category="Architecture" quadrantNumber={1} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-			<GridQuadrant projects={productsProjects} category="Products" quadrantNumber={2} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-			<GridQuadrant projects={collaborationsProjects} category="Collaborations" quadrantNumber={3} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-			<GridQuadrant projects={interiorProjects} category="Interior Design" quadrantNumber={4} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={architectureProjects} quadrantName="architecture" category="Architecture" quadrantNumber={1} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={productsProjects} quadrantName="products" category="Products" quadrantNumber={2} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={collaborationsProjects} quadrantName="collaborations" category="Collaborations" quadrantNumber={3} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+			<GridQuadrant projects={interiorProjects} quadrantName="interior" category="Interior Design" quadrantNumber={4} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
 		</div>
   );
 }
