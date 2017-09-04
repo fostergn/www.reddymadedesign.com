@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 import SingleImage from './SmallCarouselSingle';
 
 export default class SingleImageList extends Component {
@@ -36,7 +37,7 @@ export default class SingleImageList extends Component {
 								position={i+1}
 								total={array.length}
 								credit={img.image_credit}
-								toggleFullscreen={this.props.toggleFullscreen}
+								// toggleFullscreen={this.props.toggleFullscreen}
 								img={img.image.sizes.large} />
 						)
 					}
@@ -46,9 +47,15 @@ export default class SingleImageList extends Component {
 			return this._nextImage();
 		}
 
+		const fullscreenClasses = classNames({
+			'gallery__fullscreen' : true,
+			'gallery__fullscreen--hide' : this.state.imageCounter === 1,
+		});
+
 		return (
 			<div className="single__split-right">
 				<ul className="gallery__wrapper" onClick={() => handleClick()}>
+					<p className={fullscreenClasses} onClick={() => this.props.toggleFullscreen()}>fullscreen</p>
 					{imageList}
 				</ul>
 			</div>

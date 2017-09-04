@@ -1,11 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const SingleImage = ({ img, position, total, caption, show, nextImage, prevImage, isLandscape, fullscreen, toggleFullscreen }) => {
+const SingleImage = ({ img, position, forwards, total, caption, show, prev, next, nextImage, prevImage, isLandscape, fullscreen, toggleFullscreen }) => {
 
 	const wrapperClasses = classNames({
 		'fullscreen__image-wrapper' : true,
 		'fullscreen__image-wrapper--active' : show,
+		'fullscreen__image-wrapper--prev' : prev,
+		'fullscreen__image-wrapper--next' : next,
+		'fullscreen__image-wrapper--backwards' : !forwards,
 	});
 
 	const imageClasses = classNames({
@@ -28,11 +31,11 @@ const SingleImage = ({ img, position, total, caption, show, nextImage, prevImage
 			<div className="fullscreen__image-content">
 				<img className={imageClasses} src={img} />
 			</div>
-			<div className="fullscreen__controls">
+{/*			<div className="fullscreen__controls">
 				<div className="fullscreen__left-control">{caption}</div>
 				<div className="">{position} / {total}</div>
 				<div className="fullscreen__right-control" onClick={() => toggleFullscreen()}>Close</div>
-			</div>
+			</div> */}
 			<div className="fullscreen__target-left"  onClick={() => fullscreen._prevImage() }></div>
 			<div className="fullscreen__target-right"  onClick={() => fullscreen._nextImage() }></div>
 		</div>

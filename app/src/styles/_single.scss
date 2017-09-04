@@ -55,7 +55,6 @@
 	}
 	&__split-right {
 		height: calc(100vh - 40px);
-		z-index:-1;
 
 		@include mq($breakpointC) {
 			height:100%;
