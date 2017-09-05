@@ -8,7 +8,7 @@ const Feature = ({ feature }) => {
 		<div className="about-content__copy about-content__copy--margin">
 			<p className="about-content__date">{date}</p>
 			<p className="about-content__description">{summary}</p>
-			<p className="about-content__more"><a href={link}>Read More</a></p>
+			<p className="about-content__more"><a target="_blank" href={link}>Read More</a></p>
 		</div>
   );
 }

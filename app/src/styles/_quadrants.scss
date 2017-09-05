@@ -22,7 +22,8 @@
 			border-right:2.5px solid $red;
 			border-bottom:2.5px solid $red;
 
-			&.quadrant__single--hover {width:100%;}
+			&.quadrant__single--hover-horizontal {width:100%;}
+			&.quadrant__single--hover-vertical {height:100%;}
 		}
 
 		&--2 {
@@ -31,7 +32,8 @@
 			border-left:2.5px solid $red;
 			border-bottom:2.5px solid $red;
 
-			&.quadrant__single--hover {width:100%;}
+			&.quadrant__single--hover-horizontal {width:100%;}
+			&.quadrant__single--hover-vertical {height:100%;}
 		}
 
 		&--3 {
@@ -40,7 +42,8 @@
 			border-top:2.5px solid $red;
 			border-right:2.5px solid $red;
 
-			&.quadrant__single--hover {height:100%;}
+			&.quadrant__single--hover-horizontal {width:100%;}
+			&.quadrant__single--hover-vertical {height:100%;}
 		}
 
 		&--4 {
@@ -49,10 +52,11 @@
 			border-top:2.5px solid $red;
 			border-left:2.5px solid $red;
 
-			&.quadrant__single--hover {height:100%}
+			&.quadrant__single--hover-horizontal {width:100%;}
+			&.quadrant__single--hover-vertical {height:100%;}
 		}
 
-		&--hover, &--click {
+		&--hover-horizontal, &--hover-vertical, &--click {
 			z-index:1;
 		}
 

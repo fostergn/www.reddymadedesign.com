@@ -18,20 +18,14 @@ const Landing = () => {
 			<img src={Image3}/>
 		</div>
 		<div className="quadrant__single quadrant__single--2 quadrant__single--landing quadrant__single--quote">
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
-				<br />
-				<span>&mdash;Lorum Ipsum</span>
-				<br />
+			<p className="quadrant__quote">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 				<div className="read-more">Read More</div>
 			</p>
 		</div>
 		<div className="quadrant__single quadrant__single--3 quadrant__single--landing quadrant__single--quote">
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
-				<br />
-				<span>&mdash;Lorum Ipsum</span>
-				<br />
+			<p className="quadrant__quote">
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
 				<div className="read-more">Read More</div>
 			</p>
 		</div>

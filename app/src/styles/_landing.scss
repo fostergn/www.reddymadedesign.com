@@ -45,3 +45,25 @@
 		font-weight:600;
 	}
 }
+
+p.quadrant__quote {
+	font-size:1.5rem;
+	line-height:1.625rem;
+	letter-spacing:.05rem;
+	@include mq($breakpointC) {
+		font-size:2rem;
+		line-height:2.11rem;
+	}
+}
+
+.read-more {
+	margin-top:30px;
+	margin-right:auto;
+	text-transform:uppercase;
+	font-size:.67rem;
+	letter-spacing:.075rem;
+	@include mq($breakpointC) {
+		font-size:.94rem;
+		letter-spacing:.075rem;
+	}
+}

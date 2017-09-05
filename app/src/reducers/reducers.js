@@ -42,6 +42,21 @@ const rootReducer = (state = initialState, action) => {
             });
 
         case CHANGE_LIST_FILTER:
+            const filterPosition = state.listFilter.indexOf(action.filter);
+            if (filterPosition > -1 && state.listFilter.length == 1) {
+                return Object.assign({}, state, {
+                    listFilter: []
+                });
+            }
+            else if (filterPosition > -1) {
+                // remove existing tag
+                return Object.assign({}, state, {
+                    listFilter: [
+                        ...state.listFilter.slice(0, filterPosition),
+                        ...state.listFilter.slice(filterPosition + 1)
+                    ]
+                });
+            }
             return Object.assign({}, state, {
                 listFilter: action.filter === 'all' ? [] : [...state.listFilter, action.filter]
             });

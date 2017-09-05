@@ -4,10 +4,13 @@ import { Link } from 'react-router';
 import GridSingle from './GridQuadSingle';
 // import projects from '../../settings/projects';
 
-const Grid = ({ projects, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode, category, quadrantNumber, quadrantName}) => {
+const Grid = ({ projects, gridFilter, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode, category, quadrantNumber, quadrantName}) => {
 
 	const handleMouseEnter = (quadrant) => {
-		if (quadrantMode === 'click') {return}
+		console.log('handleMouse enter: ');
+		console.log('quadrantMode: ', quadrantMode);
+		console.log('quadrant: ', quadrant);
+		if (quadrantMode === 'click' && gridFilter !== 'all') {return}
 		updateQuadrantMode('hover');
 		updateQuadrant(quadrant);
 	}
@@ -23,11 +26,13 @@ const Grid = ({ projects, quadrant, quadrantMode, updateQuadrant, updateQuadrant
 		updateQuadrant('none');
 	}
 
+	const hoverVariable = Math.random() >= 0.5 ? '-horizontal' : '-vertical';
+
 	const quadClass = (quad) => {
 		return classNames({
 			'quadrant__single': true,
 			[`quadrant__single--${quad}`]: true,
-			'quadrant__single--hover': quadrantMode === 'hover' && quadrant === quad,
+			[`quadrant__single--hover${hoverVariable}`]: quadrantMode === 'hover' && quadrant === quad,
 			'quadrant__single--click': quadrantMode === 'click' && quadrant === quadrantName,
 		});
 	}

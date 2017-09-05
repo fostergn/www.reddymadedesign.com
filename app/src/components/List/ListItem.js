@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 
-const ListItem = ({project, workFilter}) => {
+const ListItem = ({project, listFilter}) => {
 
 	const { title, primary_tag, secondary_tags, slug } = project;
 
@@ -11,7 +11,7 @@ const ListItem = ({project, workFilter}) => {
 
 	const listTextClass = classNames({
 		'list__text-item': true,
-		'list__text-item--inactive': !allTags.includes(workFilter) && workFilter !== 'all'
+		'list__text-item--inactive': !listFilter.every(tag => allTags.includes(tag)) && listFilter.length > 0
 	})
 
   return (

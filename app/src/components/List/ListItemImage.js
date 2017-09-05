@@ -2,21 +2,22 @@ import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router';
 
-const ListItemImage = ({project, workFilter}) => {
+const ListItemImage = ({project, listFilter}) => {
 
-	const { name, primaryTag, secondaryTags, slug } = project;
+	const { primary_tag, secondary_tags, slug, images } = project;
 
-	const allTags = [primaryTag, ...secondaryTags];
-	const tags = allTags.join(', ');
+	console.log('project: ', project);
+
+	const allTags = [primary_tag, ...secondary_tags];
 
 	const listImageClass = classNames({
 		'list__image-container': true,
-		'list__image-container--inactive': !allTags.includes(workFilter) && workFilter !== 'all'
+		'list__text-item--inactive': !listFilter.every(tag => allTags.includes(tag)) && listFilter.length > 0
 	})
 
   return (
 		<Link to={`/work/${slug}`} className={listImageClass}>
-			<img className="list__image" src={project.images[0]} />
+			<img className="list__image" src={images[0].image.sizes.medium} />
 		</Link>
   );
 }

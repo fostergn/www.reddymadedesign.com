@@ -31,11 +31,6 @@ const SingleImage = ({ img, position, forwards, total, caption, show, prev, next
 			<div className="fullscreen__image-content">
 				<img className={imageClasses} src={img} />
 			</div>
-{/*			<div className="fullscreen__controls">
-				<div className="fullscreen__left-control">{caption}</div>
-				<div className="">{position} / {total}</div>
-				<div className="fullscreen__right-control" onClick={() => toggleFullscreen()}>Close</div>
-			</div> */}
 			<div className="fullscreen__target-left"  onClick={() => fullscreen._prevImage() }></div>
 			<div className="fullscreen__target-right"  onClick={() => fullscreen._nextImage() }></div>
 		</div>
