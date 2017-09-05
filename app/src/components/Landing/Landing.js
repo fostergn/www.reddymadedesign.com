@@ -20,13 +20,13 @@ const Landing = () => {
 		<div className="quadrant__single quadrant__single--2 quadrant__single--landing quadrant__single--quote">
 			<p className="quadrant__quote">
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				<div className="read-more">Read More</div>
+				<p className="read-more">Read More</p>
 			</p>
 		</div>
 		<div className="quadrant__single quadrant__single--3 quadrant__single--landing quadrant__single--quote">
 			<p className="quadrant__quote">
 				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				<div className="read-more">Read More</div>
+				<p className="read-more">Read More</p>
 			</p>
 		</div>
 		<div className="quadrant__single quadrant__single--4 quadrant__single--landing quadrant__single--image">

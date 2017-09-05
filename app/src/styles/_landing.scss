@@ -1,8 +1,56 @@
+.quadrant__container--landing {
+	overflow:scroll;
+
+	@include mq($breakpointB){
+		overflow:hidden;
+	}
+}
+
+.quadrant__single--quote.quadrant__single--landing {
+	height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+	@include mq($breakpointB) {
+		padding:0;
+		height: calc(50% - 1px);
+	}
+
+}
+
 .quadrant__single--landing {
 	display:flex;
 	align-items:center;
 	justify-content:center;
 	cursor:pointer;
+	width:100%;
+	height:100vh;
+	flex-wrap:wrap;
+	position:relative;
+
+	@include mq($breakpointB) {
+		position:absolute;
+		flex-wrap:nowrap;
+	    width: calc(50% - 1px);
+	    height: calc(50% - 1px);
+	}
+}
+
+.quadrant__single--2.quadrant__single--landing {
+	border:none;
+
+	@include mq($breakpointB) {
+		border-left: 2.5px solid #FF3344;
+    	border-bottom: 2.5px solid #FF3344;
+	}
+}
+
+.quadrant__single--2.quadrant__single--landing {
+	border:none;
+
+	@include mq($breakpointB) {
+		border-left: 2.5px solid #FF3344;
+    	border-bottom: 2.5px solid #FF3344;
+	}
 }
 
 .quadrant__single--landing > img {
@@ -12,8 +60,14 @@
 }
 
 .quadrant__single--landing > p {
-	width:80%;
+	width:90%;
 	font-size:18px;
+	@include mq($breakpointB){
+		width:66.66%;
+	}
+	@include mq($breakpointB){
+		width: 77.77%;
+	}
 }
 
 .quadrant__single--landing span {
