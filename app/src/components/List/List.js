@@ -7,8 +7,8 @@ const List = ({projects, listFilter}) => {
 
 	if (projects.length === 0) {return <div>Loading...</div>}
 
-	const itemsTextList = projects.map(project => <ListItemText key={project.id} listFilter={listFilter} project={project.acf}/>);
-	const itemImageList = projects.map(project => <ListItemImage key={project.date} listFilter={listFilter} project={project.acf}/>);
+	const itemsTextList = projects.map(project => <ListItemText key={project.id} listFilter={listFilter} project={project}/>);
+	const itemImageList = projects.map(project => <ListItemImage key={project.date} listFilter={listFilter} project={project}/>);
 
   return (
 		<div className="list__container">

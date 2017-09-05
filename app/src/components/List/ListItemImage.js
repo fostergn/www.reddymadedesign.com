@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const ListItemImage = ({project, listFilter}) => {
 
-	const { primary_tag, secondary_tags, slug, images } = project;
+	const { primary_tag, secondary_tags, images } = project.acf;
 
 	console.log('project: ', project);
 
@@ -16,7 +16,7 @@ const ListItemImage = ({project, listFilter}) => {
 	})
 
   return (
-		<Link to={`/work/${slug}`} className={listImageClass}>
+		<Link to={`/work/${project.slug}`} className={listImageClass}>
 			<img className="list__image" src={images[0].image.sizes.medium} />
 		</Link>
   );
