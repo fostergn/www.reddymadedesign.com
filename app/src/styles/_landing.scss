@@ -12,7 +12,7 @@
     padding-bottom: 60px;
 	@include mq($breakpointB) {
 		padding:0;
-		height: calc(50% - 1px);
+		height: 50%;
 	}
 
 }
@@ -26,12 +26,22 @@
 	height:100vh;
 	flex-wrap:wrap;
 	position:relative;
+	box-sizing:border-box;
 
 	@include mq($breakpointB) {
 		position:absolute;
 		flex-wrap:nowrap;
-	    width: calc(50% - 1px);
-	    height: calc(50% - 1px);
+	    width: 50%;
+	    height: 50%;
+	}
+}
+
+.quadrant__single--1.quadrant__single--landing {
+	border:none;
+
+	@include mq($breakpointB) {
+		border-left: 2.5px solid #FF3344;
+    	border-bottom: 2.5px solid #FF3344;
 	}
 }
 
@@ -44,7 +54,17 @@
 	}
 }
 
-.quadrant__single--2.quadrant__single--landing {
+.quadrant__single--3.quadrant__single--landing {
+	border:none;
+
+	@include mq($breakpointB) {
+		border-left: 2.5px solid #FF3344;
+    	border-bottom: 2.5px solid #FF3344;
+	}
+}
+
+
+.quadrant__single--4.quadrant__single--landing {
 	border:none;
 
 	@include mq($breakpointB) {
@@ -92,12 +112,6 @@
 		opacity:.3;
 	}
 
-}
-
-.quadrant__single--quote {
-	&:hover .read-more {
-		font-weight:600;
-	}
 }
 
 p.quadrant__quote {

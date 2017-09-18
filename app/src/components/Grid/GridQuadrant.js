@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import GridSingle from './GridQuadSingle';
 // import projects from '../../settings/projects';
 
-const Grid = ({ projects, gridFilter, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode, category, quadrantNumber, quadrantName}) => {
+const Grid = ({ projects,  workFilterOpen, gridFilter, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode, category, quadrantNumber, quadrantName}) => {
 
 	const handleMouseEnter = (quadrant) => {
 		console.log('handleMouse enter: ');
@@ -34,6 +34,7 @@ const Grid = ({ projects, gridFilter, quadrant, quadrantMode, updateQuadrant, up
 			[`quadrant__single--${quad}`]: true,
 			[`quadrant__single--hover${hoverVariable}`]: quadrantMode === 'hover' && quadrant === quad,
 			'quadrant__single--click': quadrantMode === 'click' && quadrant === quadrantName,
+			'quadrant__single--open': workFilterOpen
 		});
 	}
 

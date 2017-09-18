@@ -85,7 +85,8 @@ function receivePosts(posts, category) {
     const categoryMap = {
         'feature?per_page=100': 'features',
         'project?per_page=100': 'projects',
-        'pages?slug=about': 'about'
+        'pages?slug=about': 'about',
+        'pages?slug=landing': 'landing'
     }
   return {
     type: RECEIVE_POSTS,

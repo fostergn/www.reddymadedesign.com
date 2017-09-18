@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
     gridFilter: state.gridFilter,
     listFilter: state.listFilter,
     menuOpen: state.menuOpen,
+    about: state.about,
   };
 };
 

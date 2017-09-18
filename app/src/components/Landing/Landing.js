@@ -1,37 +1,25 @@
 import React from 'react';
-import Image1 from '../../images/1.jpg';
-import Image2 from '../../images/2.jpg';
-import Image3 from '../../images/3.jpg';
-import Image4 from '../../images/4.jpg';
-import Image5 from '../../images/5.jpg';
-import Image6 from '../../images/6.jpg';
-import Image7 from '../../images/7.jpg';
-import Image8 from '../../images/8.jpg';
-import Image9 from '../../images/9.jpg';
-import Image10 from '../../images/10.jpg';
+import LandingQuote from './LandingQuote';
+import LandingImage from './LandingImage';
 
-const Landing = () => {
+const Landing = ({landing}) => {
+
+	if(landing.length < 1) { return <div>landing...</div> }
+
+	const landing_fields = landing[0].acf;
+
+	const quadrants = ['quadrant_1', 'quadrant_2', 'quadrant_3', 'quadrant_4'];
+
+	const landing_quadrants = quadrants.map((quad, index) => {
+
+		const link = landing_fields[`link_${index + 1}`].post_name
+
+		return landing_fields[quad] === 'quote' ? <LandingQuote index={index + 1} quote={landing_fields[`quote_${index + 1}`]} link={link} /> : <LandingImage index={index + 1} image={landing_fields[`image_${index + 1}`]} link={link} />
+	});
 
   return (
 	<div className="quadrant__container quadrant__container--landing">
-		<div className="quadrant__single quadrant__single--1 quadrant__single--landing quadrant__single--image">
-			<img src={Image3}/>
-		</div>
-		<div className="quadrant__single quadrant__single--2 quadrant__single--landing quadrant__single--quote">
-			<p className="quadrant__quote">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				<p className="read-more">Read More</p>
-			</p>
-		</div>
-		<div className="quadrant__single quadrant__single--3 quadrant__single--landing quadrant__single--quote">
-			<p className="quadrant__quote">
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-				<p className="read-more">Read More</p>
-			</p>
-		</div>
-		<div className="quadrant__single quadrant__single--4 quadrant__single--landing quadrant__single--image">
-			<img src={Image4}/>
-		</div>
+		{landing_quadrants}
 	</div>
   );
 }

@@ -3,7 +3,7 @@ import Landing from './Landing';
 
 const mapStateToProps = (state) => {
   return {
-    // isNavOpen: state.isNavOpen,
+    landing: state.landing,
   };
 };
 

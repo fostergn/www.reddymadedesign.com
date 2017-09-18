@@ -3,6 +3,7 @@ const initialState = {
   projects: [],
   instagram: [],
   features: [],
+  landing: [],
   gridFilter: 'all', // all, architecture, products, collaborations, interior
   listFilter: [],
   workFilterOpen: true, // boolean

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 const Work = ({workView, workFilter, workFilterOpen}) => {
 
-	const workContent = workView === 'grid' ? <WorkGrid workFilter={workFilter} /> : <List workFilter={workFilter}/>
+	const workContent = workView === 'grid' ? <WorkGrid workFilterOpen={workFilterOpen} workFilter={workFilter} /> : <List workFilter={workFilter}/>
 
 	const workStyle = classNames({
 		'work__container': true,
