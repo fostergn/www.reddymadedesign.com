@@ -8,9 +8,9 @@ const Sidebar = ({}) => {
   return (
 		<footer className="sidebar__container">
 			<ul className="sidebar__list">
-				<li className="sidebar__list-item"><img src={facebook}/></li>
-				<li className="sidebar__list-item"><img src={instagram}/></li>
-				<li className="sidebar__list-item"><img src={linkedin}/></li>
+				<li className="sidebar__list-item"><a target="_blank" href="https://www.facebook.com/reddymadedesign/"><img src={facebook}/></a></li>
+				<li className="sidebar__list-item"><a target="_blank" href="https://www.instagram.com/reddymadedesign/"><img src={instagram}/></a></li>
+				<li className="sidebar__list-item"><a target="_blank" href="https://www.linkedin.com/company/2592637/"><img src={linkedin}/></a></li>
 			</ul>
 		</footer>
   );

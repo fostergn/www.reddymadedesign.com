@@ -23,13 +23,14 @@
 	&__left, &__right {
 		display:inline-block;
 		width: calc(100% + 3px);
-		height:calc(100vh - 39px);
-		overflow:scroll;
+		height:auto;
 		box-sizing:border-box;
 		// display:inline-grid;
 		// grid-template-columns:repeat(18, 1fr);
 		@include mq($breakpointC) {
 			width:50%;
+			height:calc(100vh - 39px);
+			overflow:scroll;
 		}
 	}
 

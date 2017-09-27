@@ -1,7 +1,7 @@
 .quadrant__container--landing {
 	overflow:scroll;
 
-	@include mq($breakpointB){
+	@include mq($breakpointC){
 		overflow:hidden;
 	}
 }
@@ -10,11 +10,27 @@
 	height: auto;
     padding-top: 60px;
     padding-bottom: 60px;
-	@include mq($breakpointB) {
+	@include mq($breakpointC) {
 		padding:0;
 		height: 50%;
 	}
 
+}
+
+.quadrant__single--image.quadrant__single--landing {
+	height: 25vh;
+	@include mq($breakpointC) {
+		height: 50%;
+	}
+}
+
+.quadrant__single:first-child{
+	padding-top: 0px;
+}
+
+
+.quadrant__single:last-child{
+	padding-bottom: 0px;
 }
 
 .quadrant__single--landing {
@@ -28,7 +44,7 @@
 	position:relative;
 	box-sizing:border-box;
 
-	@include mq($breakpointB) {
+	@include mq($breakpointC) {
 		position:absolute;
 		flex-wrap:nowrap;
 	    width: 50%;
@@ -39,7 +55,7 @@
 .quadrant__single--1.quadrant__single--landing {
 	border:none;
 
-	@include mq($breakpointB) {
+	@include mq($breakpointC) {
 		border-left: 2.5px solid #FF3344;
     	border-bottom: 2.5px solid #FF3344;
 	}
@@ -48,7 +64,7 @@
 .quadrant__single--2.quadrant__single--landing {
 	border:none;
 
-	@include mq($breakpointB) {
+	@include mq($breakpointC) {
 		border-left: 2.5px solid #FF3344;
     	border-bottom: 2.5px solid #FF3344;
 	}
@@ -57,7 +73,7 @@
 .quadrant__single--3.quadrant__single--landing {
 	border:none;
 
-	@include mq($breakpointB) {
+	@include mq($breakpointC) {
 		border-left: 2.5px solid #FF3344;
     	border-bottom: 2.5px solid #FF3344;
 	}
@@ -67,7 +83,7 @@
 .quadrant__single--4.quadrant__single--landing {
 	border:none;
 
-	@include mq($breakpointB) {
+	@include mq($breakpointC) {
 		border-left: 2.5px solid #FF3344;
     	border-bottom: 2.5px solid #FF3344;
 	}
@@ -85,7 +101,7 @@
 	@include mq($breakpointB){
 		width:66.66%;
 	}
-	@include mq($breakpointB){
+	@include mq($breakpointC){
 		width: 77.77%;
 	}
 }

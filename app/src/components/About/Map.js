@@ -10,6 +10,16 @@ class Map extends Component {
 				disableDefaultUI: true,
 				styles: MapStyles
 			});
+
+			  var marker = new window.google.maps.Marker({
+			    position: {
+			    	lat: 40.729651143471,
+			    	lng: -73.9989151350413,
+			    },
+			    map: window.map,
+			    title: 'Reddymade Design'
+			  });
+
 			window.google.maps.event.trigger(window.map, 'resize');
     }
 

@@ -19,6 +19,7 @@
 		background-color:#fff;
 		box-sizing:content-box;
 		z-index:0;
+		// margin-top:40px;
 
 		@include mq($breakpointC) {
 			position:absolute;
@@ -30,8 +31,11 @@
 		&--1 {
 			top:0;
 			left:0;
-			border-right:2.5px solid $red;
 			border-bottom:2.5px solid $red;
+
+			@include mq($breakpointC){
+				border-right:2.5px solid $red;
+			}
 
 			&.quadrant__single--hover-horizontal {width:100%;}
 			&.quadrant__single--hover-vertical {height:100%;}
@@ -40,8 +44,11 @@
 		&--2 {
 			top:0;
 			right:0;
-			border-left:2.5px solid $red;
 			border-bottom:2.5px solid $red;
+
+			@include mq($breakpointC){
+				border-left:2.5px solid $red;
+			}
 
 			&.quadrant__single--hover-horizontal {width:100%;}
 			&.quadrant__single--hover-vertical {height:100%;}
@@ -51,7 +58,10 @@
 			bottom:0;
 			left:0;
 			border-top:2.5px solid $red;
-			border-right:2.5px solid $red;
+
+			@include mq($breakpointC){
+				border-right:2.5px solid $red;
+			}
 
 			&.quadrant__single--hover-horizontal {width:100%;}
 			&.quadrant__single--hover-vertical {height:100%;}
@@ -61,7 +71,10 @@
 			bottom:0;
 			right:0;
 			border-top:2.5px solid $red;
-			border-left:2.5px solid $red;
+
+			@include mq($breakpointC){
+				border-left:2.5px solid $red;
+			}
 
 			&.quadrant__single--hover-horizontal {width:100%;}
 			&.quadrant__single--hover-vertical {height:100%;}
@@ -124,13 +137,25 @@
 		top:10px;
 		left:10px;
 		z-index:10;
-
 		transition:top .2s;
+		padding-left:12px;
+		// margin-top:$vertical-margin-s;
+
+		@include mq($breakpointC){
+			padding-left:0;
+		}
 	}
 
 	&__images {
 		display:block;
 		margin: 20px;
+		// margin-top: 70px;
+
+		@include mq($breakpointB){
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:space-between;
+		}
 
 		@include mq($breakpointC){
 			display:grid;
@@ -138,6 +163,7 @@
 			grid-row-gap: 5vw;
 			grid-auto-rows:40vh;
 			grid-template-columns: repeat(36, 1fr);
+			margin-top: 70px;
 		}
 	}
 
@@ -145,9 +171,15 @@
 
 		padding: $vertical-margin-s 0;
 		display:block;
+		width:100%;
+
+		@include mq($breakpointB){
+			width: calc(50% - 10px);
+		}
 
 		@include mq($breakpointC){
 			display:contents;
+			width:auto;
 
 			&:nth-child(1){grid-column: 2 / span 7}
 			&:nth-child(2){grid-column: 11 / span 7; align-self:end;}
@@ -159,7 +191,7 @@
 			&:nth-child(5){grid-column: 2 / span 7}
 			&:nth-child(6){grid-column: 11 / span 7; align-self:end}
 			&:nth-child(7){grid-column: 20 / span 8}
-			&:nth-child(8){grid-column: 28 / span 8; align-self:center}
+			&:nth-child(8){grid-column: 30 / span 6; align-self:center}
 			&:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
 				grid-row:2;
 			}
@@ -173,34 +205,67 @@
 		}
 
 		& img {
-			max-width:100%;
-			max-height:90%;
+			width:100%;
+			height:100%;
+			object-fit:cover;
+			position:relative;
+
+			@include mq($breakpointB) { max-height: 200px }
+			@include mq(600px) { max-height: 200px }
+			@include mq($breakpointC) { max-height: 200px }
+			@include mq(850px) { max-height: 200px }
+			@include mq(950px) { max-height: 220px }
+			@include mq(1100px) { max-height: 260px }
+			@include mq(1300px) { max-height: 280px }
+			@include mq(1500px) { max-height: 300px }
+			@include mq(1900px) { max-height: 330px }
+
+			&:before {
+				content:'';
+				width:100%;
+				height:100%;
+				position:absolute;
+			}
 		}
 	}
 
 	&__image-hover {
 		position:relative;
 		line-height:0;
+		height:100%;
+
+		@include mq($breakpointC) {
+			height:auto;
+		}
 
 		&:hover .quadrant__image-title {
-			display:flex;
-			align-items:center;
-			justify-content:center;
-			line-height:1em;
+			@include mq($breakpointC) {
+				display:flex;
+				align-items:center;
+				justify-content:center;
+				line-height:1em;
+			}
 		}
 	}
 
 	&__image-title {
-		display:none;
 		width:100%;
 		height:100%;
-		position:absolute;
-		top:50%;
-		left:50%;
-		transform: translate(-50%, -50%);
-		color:#fff;
-		background-color: rgba(234,73,77, .5);
-		padding:.5em;
+		text-transform: uppercase;
+		position:relative;
+		top:20px;
+
+		@include mq($breakpointC) {
+			display:none;
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%, -50%);
+			color:#fff;
+			background-color: rgba(234,73,77, .5);
+			padding:.5em;
+			text-align:center;
+		}
 	}
 }
 
@@ -216,35 +281,47 @@
 
 .quadrant__single.quadrant__single--hover-horizontal, .quadrant__single.quadrant__single--hover-vertical {
 	& .quadrant__title {
-		position:fixed;
-		display:block;
+		@include mq($breakpointC){
+			position:fixed;
+			display:block;
+		}
 	}
 }
 
 .quadrant__single--1.quadrant__single--hover-horizontal, .quadrant__single--2.quadrant__single--hover-horizontal, .quadrant__single--1.quadrant__single--hover-vertical, .quadrant__single--2.quadrant__single--hover-vertical {
 	& .quadrant__title {
-		top: 95px;
+		@include mq($breakpointC){
+			top: 95px;
+		}
 	}
 }
 
 .quadrant__single--3.quadrant__single--hover-horizontal, .quadrant__single--4.quadrant__single--hover-horizontal, .quadrant__single--3.quadrant__single--hover-vertical, .quadrant__single--4.quadrant__single--hover-vertical {
 	& .quadrant__title {
-		top: calc(50% + 35px);
+		@include mq($breakpointC){
+			top: calc(50% + 35px);
+		}
 	}
 }
 
 .quadrant__single--1.quadrant__single--hover-horizontal, .quadrant__single--3.quadrant__single--hover-horizontal, .quadrant__single--1.quadrant__single--hover-vertical, .quadrant__single--3.quadrant__single--hover-vertical {
 	& .quadrant__title {
-		left: 55px;
+		@include mq($breakpointC){
+			left: 55px;
+		}
 	}
 }
 
 .quadrant__single--2.quadrant__single--hover-horizontal, .quadrant__single--4.quadrant__single--hover-horizontal, .quadrant__single--2.quadrant__single--hover-vertical, .quadrant__single--4.quadrant__single--hover-vertical {
 	& .quadrant__title {
-		left: calc(50% + 55px);
+		@include mq($breakpointC){
+			left: calc(50% + 55px);
+		}
 	}
 }
 
 .quadrant__single--open .quadrant__title{
-	top: 55px;
+	@include mq($breakpointC){
+		top: 55px;
+	}
 }

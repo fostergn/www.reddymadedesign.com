@@ -58,6 +58,7 @@
 
 		@include mq($breakpointC) {
 			height:100%;
+			overflow:hidden;
 		}
 	}
 

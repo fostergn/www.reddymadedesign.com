@@ -1,5 +1,4 @@
 import React from 'react';
-import projects from '../../settings/projects';
 import ListItemText from './ListItem';
 import ListItemImage from './ListItemImage';
 
@@ -13,8 +12,6 @@ const List = ({projects, listFilter}) => {
   return (
 		<div className="list__container">
 			<div className="list__left">
-				{itemsTextList}
-				{itemsTextList}
 				{itemsTextList}
 			</div>
 			<div className="list__right">
