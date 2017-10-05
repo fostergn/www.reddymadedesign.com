@@ -45,7 +45,7 @@ export default class SingleHeroVideo extends Component {
 			    <div className="videobg-aspect">
 			      <div className="videobg-make-height">
 			        <div className="videobg-hide-controls">
-			            <iframe src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&title=0&byline=0&portrait=0`} frameBorder="0" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
+			            <iframe src={`https://player.vimeo.com/video/${videoId}?autoplay=1&loop=1&?background=1&title=0&byline=0&portrait=0`} frameBorder="0" webkitAllowFullScreen mozAllowFullScreen allowFullScreen></iframe>
 			        </div>
 			      </div>
 			    </div>

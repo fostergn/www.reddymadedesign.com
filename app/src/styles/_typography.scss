@@ -31,3 +31,11 @@
 body {
 	font-family: FoundersGroteskWeb, Arial, Helvetica, sans-serif;
 }
+
+html, body {
+    font-size: 16px;
+
+    @include mq($breakpointD) {
+      font-size: 18px;
+    }
+}
