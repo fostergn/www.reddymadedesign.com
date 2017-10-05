@@ -130,7 +130,6 @@
 	}
 
 	&__title {
-		display:none;
 		font-size:.94em;
 		font-weight:600;
 		letter-spacing:.075em;
@@ -147,6 +146,7 @@
 
 		@include mq($breakpointC){
 			padding-left:0;
+			display:none;
 		}
 	}
 
@@ -259,9 +259,10 @@
 		height:100%;
 		text-transform: uppercase;
 		position:relative;
-		top:20px;
+		top:10px;
 		backface-visibility: hidden;
 		transform: translateZ(0) scale(1.0, 1.0);
+		line-height:1.4em;
 
 		@include mq($breakpointC) {
 			display:flex;
@@ -335,5 +336,13 @@
 .quadrant__single--open .quadrant__title{
 	@include mq($breakpointC){
 		top: 55px;
+	}
+}
+
+.quadrant__single, .quadrant__content {
+	overflow:inherit;
+
+	@include mq($breakpointC) {
+		overflow:auto;
 	}
 }
