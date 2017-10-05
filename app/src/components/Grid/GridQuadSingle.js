@@ -4,9 +4,9 @@ import { Link } from 'react-router';
 
 const Single = ({ project }) => {
 
-	const {title, images } = project.acf;
+	const {title, images, work_image } = project.acf;
 
-	const projectImage = images[0].image.sizes.large;
+	const projectImage = typeof work_image != 'undefined' && work_image !== false ? work_image.sizes.large : images[0].image.sizes.large;
 
   return (
 		<Link to={`/work/${project.slug}`} className="quadrant__image">

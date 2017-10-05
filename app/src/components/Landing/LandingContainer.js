@@ -4,6 +4,8 @@ import Landing from './Landing';
 const mapStateToProps = (state) => {
   return {
     landing: state.landing,
+    projects: state.projects,
+    features: state.features,
   };
 };
 

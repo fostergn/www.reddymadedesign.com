@@ -23,7 +23,7 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen }) => {
 
 	const relatedProjects = related_projects[0].project.map(project => <RelatedProject key={project.ID} projects={projects} project={project} />)
 
-	const allTags = [primary_tag, ...secondary_tags];
+	const allTags = [primary_tag, ...secondary_tags].map(tag => tag === 'products' ? 'editions' : tag);
 	const tags = allTags.join(', ');
 
   return (

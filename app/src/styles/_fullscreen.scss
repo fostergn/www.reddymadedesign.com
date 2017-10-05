@@ -83,6 +83,9 @@
 		top:0;
 		left:0;
 		z-index:20;
+		&:hover {
+			cursor: url('../images/arrow-left.png') 60 20, auto !important;
+		}
 	}
 
 	&__target-right {
@@ -92,9 +95,12 @@
 		top:0;
 		right:0;
 		z-index:20;
+		&:hover {
+			cursor: url('../images/arrow-right.png') 60 20, auto !important;
+		}
 	}
 
-	&__target-left, &__target-right, &__right-control {
+	&__right-control {
 		cursor:pointer;
 	}
 }

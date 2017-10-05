@@ -2,7 +2,7 @@ import React from 'react';
 import LandingQuote from './LandingQuote';
 import LandingImage from './LandingImage';
 
-const Landing = ({landing}) => {
+const Landing = ({landing, projects, features}) => {
 
 	if(landing.length < 1) { return <div>landing...</div> }
 
@@ -12,9 +12,9 @@ const Landing = ({landing}) => {
 
 	const landing_quadrants = quadrants.map((quad, index) => {
 
-		const link = landing_fields[`link_${index + 1}`].post_name
+		// const link = landing_fields[`link_${index + 1}`].post_name
 
-		return landing_fields[quad] === 'quote' ? <LandingQuote index={index + 1} quote={landing_fields[`quote_${index + 1}`]} link={link} /> : <LandingImage index={index + 1} image={landing_fields[`image_${index + 1}`]} link={link} />
+		return landing_fields[quad] === 'quotes' ? <LandingQuote index={index + 1} features={features} quotes={landing_fields[`news_${index + 1}`]} /> : <LandingImage index={index + 1} projects={projects} project={landing_fields[`project_${index + 1}`]} projectQuote={landing_fields[`project_quote_${index + 1}`]} />
 	});
 
   return (

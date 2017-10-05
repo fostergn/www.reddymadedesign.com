@@ -37,8 +37,6 @@ export default class Fullscreen extends Component {
 
 		if(!this.props.isFullscreen){return null}
 
-		console.log('this state : ', this.state.forwards);
-
 		const imageList = this.props.images.map((img, i, array) => {
 					if (img.image.sizes) {
 						return (
@@ -62,10 +60,6 @@ export default class Fullscreen extends Component {
 					}
 		})
 
-		const handleClick = () => {
-			this._nextImage();
-		}
-
 		return (
 			<ul className="fullscreen__container">
 				{imageList}
@@ -74,6 +68,8 @@ export default class Fullscreen extends Component {
 					<div className="">{this.state.imageCounter} / {this.props.images.length}</div>
 					<div className="fullscreen__right-control" onClick={() => this.props.toggleFullscreen()}>Close</div>
 				</div>
+				<div className="fullscreen__target-left"  onClick={() => this._prevImage() }></div>
+				<div className="fullscreen__target-right"  onClick={() => this._nextImage() }></div>
 			</ul>
 		)
 	}

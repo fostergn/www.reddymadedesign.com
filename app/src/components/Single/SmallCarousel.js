@@ -6,7 +6,10 @@ export default class SingleImageList extends Component {
 	constructor(props){
 		super(props);
 		this.imagesTotal = this.props.images.length;
-		this.state = {imageCounter: 1};
+		this.state = {
+			imageCounter: 1,
+			forwards: true
+		};
 	}
 	_incrementCounter(){
 		this.imageTimer = setInterval(() => {
@@ -15,7 +18,14 @@ export default class SingleImageList extends Component {
 	}
 	_nextImage(){
 		this.setState({
-			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1
+			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
+			forwards: true
+		})
+	}
+	_prevImage(){
+		this.setState({
+			imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
+			forwards: false
 		})
 	}
 	componentDidMount(){
@@ -53,11 +63,13 @@ export default class SingleImageList extends Component {
 		});
 
 		return (
-			<div className="single__split-right">
+			<div className="single__split-right" style={{position:'relative'}}>
 				<ul className="gallery__wrapper" onClick={() => handleClick()}>
 					<p className={fullscreenClasses} onClick={() => this.props.toggleFullscreen()}>fullscreen</p>
 					{imageList}
 				</ul>
+				<div className="carousel__target-left"  onClick={() => this._prevImage() }></div>
+				<div className="carousel__target-right"  onClick={() => this._nextImage() }></div>
 			</div>
 		)
 	}

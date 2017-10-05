@@ -1,16 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
+import classNames from 'classnames';
 
-const LandingQuote = ({ index, quote, link }) => {
+export default class LandingQuote extends Component {
 
-  return (
-	<Link to={`/work/${link}`} className={`quadrant__single quadrant__single--${index} quadrant__single--landing quadrant__single--quote`}>
-		<p className="quadrant__quote">
-			Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-			<p className="read-more">Read More</p>
-		</p>
-	</Link>
-  );
+	constructor(props){
+		super(props);
+		this.quotesTotal = this.props.quotes.length;
+		this.state = {
+			quoteCounter: 1
+		};
+	}
+	_incrementCounter(){
+		console.log('incrementing counter start');
+		this.opacityTimer = setInterval(() => {
+			console.log('incrementing counter');
+			this._nextQuote();
+		}, 6000)
+	}
+	_nextQuote(){
+		this.setState({
+			quoteCounter: this.state.quoteCounter === this.quotesTotal ? 1 : this.state.quoteCounter + 1
+		})
+	}
+	componentDidMount(){
+		this._incrementCounter();
+	}
+	componentWillUnmount(){
+		clearInterval(this.opacityTimer);
+	}
+
+	render() {
+
+		const { index, quotes, features } = this.props;
+
+		const landing_quotes = quotes.map(quote => features.find(feature => feature.id === quote.news_item.ID));
+
+		const quoteList = landing_quotes.map((quote, index) => {
+
+			const classes = classNames({
+				'quadrant__quote-container': true,
+				[`quadrant__quote-container--${index + 1}`]: true,
+				'quadrant__quote-container--active': index + 1 === this.state.quoteCounter
+			});
+
+			return (
+				<div className={classes}>
+					<p className="quadrant__quote">
+						{quote.acf.summary}
+						<a style={{display:'block'}} target="_blank" href={quotes[index].news_item_link} className="read-more">Read More</a>
+					</p>
+				</div>
+			);
+		});
+
+	  return (
+			<div className={`quadrant__single quadrant__single--${index} quadrant__single--landing quadrant__single--quote`}>
+				{quoteList}
+			</div>
+	  );
+	}
 }
-
-export default LandingQuote;
