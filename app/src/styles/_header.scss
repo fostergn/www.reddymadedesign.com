@@ -223,9 +223,13 @@
 	    height: 100%;
 	    top: 0;
 	    right: 20px;
-	    display: flex;
+	    display: none;
 	    align-items: center;
 	    cursor:pointer;
+
+	    @include mq($breakpointB) {
+	    	display:flex;
+	    }
 	}
 }
 
