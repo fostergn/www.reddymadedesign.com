@@ -6,8 +6,8 @@ const List = ({projects, listFilter}) => {
 
 	if (projects.length === 0) {return <div>Loading...</div>}
 
-	const itemsTextList = projects.map(project => <ListItemText key={project.id} listFilter={listFilter} project={project}/>);
-	const itemImageList = projects.map(project => <ListItemImage key={project.date} listFilter={listFilter} project={project}/>);
+	const itemsTextList = projects.sort((a,b) => a.slug.localeCompare(b.slug)).map(project => <ListItemText key={project.id} listFilter={listFilter} project={project}/>);
+	const itemImageList = projects.sort((a,b) => a.slug.localeCompare(b.slug)).map(project => <ListItemImage key={project.date} listFilter={listFilter} project={project}/>);
 
   return (
 		<div className="list__container">

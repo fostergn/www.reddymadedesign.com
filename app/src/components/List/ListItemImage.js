@@ -6,8 +6,6 @@ const ListItemImage = ({project, listFilter}) => {
 
 	const { primary_tag, secondary_tags, images } = project.acf;
 
-	console.log('project: ', project);
-
 	const allTags = [primary_tag, ...secondary_tags];
 
 	const listImageClass = classNames({

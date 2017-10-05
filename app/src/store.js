@@ -10,7 +10,8 @@ export function configureStore() {
   let middleware = [thunk];
 
   let store = {};
-  const initializedState = loadState() !== undefined ? loadState() : initialState;
+  // const initializedState = loadState() !== undefined ? loadState() : initialState;
+  const initializedState = initialState;
 
   // Load Chrome Dev Tools Extension if DEV mode
   if (process.env.NODE_ENV !== 'production') {

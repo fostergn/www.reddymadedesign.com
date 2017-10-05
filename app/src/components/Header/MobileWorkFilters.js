@@ -55,9 +55,9 @@ const MobileWorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilter
         	<ul className="mobile-work-filters__list">
         		<li onClick={() => handleClick('all', workView)} className={filterClass('all')}>All</li>
         		<li onClick={() => handleClick('architecture', workView)} className={filterClass('architecture')}>Architecture</li>
-        		<li onClick={() => handleClick('products', workView)} className={filterClass('products')}>Products</li>
-        		<li onClick={() => handleClick('collaborations', workView)} className={filterClass('collaborations')}>Collaborations</li>
         		<li onClick={() => handleClick('interior', workView)} className={filterClass('interior')}>Interior Design</li>
+        		<li onClick={() => handleClick('collaborations', workView)} className={filterClass('collaborations')}>Collaborations</li>
+        		<li onClick={() => handleClick('products', workView)} className={filterClass('products')}>Editions</li>
         		<div onClick={() => handleFilterClick()} className="mobile-close-filter">X</div>
         	</ul>
         	<div className={viewClass}>
