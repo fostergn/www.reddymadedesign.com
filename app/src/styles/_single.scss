@@ -75,7 +75,7 @@
 		grid-column: 2 / span 18;
 		grid-row: 1;
 		display:flex;
-		align-items:center;
+		align-items:baseline;
 
 		@include mq($breakpointB) {
 			grid-column: 3 / span 14;
@@ -94,6 +94,10 @@
 		font-size:.67em;
 		letter-spacing: 0.05em;
 		text-transform:uppercase;
+
+		& > span {
+			cursor:pointer;
+		}
 	}
 	&__description{
 		grid-column: 2 / span 18;

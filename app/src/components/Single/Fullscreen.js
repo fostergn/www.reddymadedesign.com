@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FullscreenSingle from './FullscreenSingle';
+import { throttle } from 'lodash';
 
 export default class Fullscreen extends Component {
 	constructor(props){
@@ -9,6 +10,8 @@ export default class Fullscreen extends Component {
 			imageCounter: 1,
 			forwards: true
 		};
+		this._nextImage = throttle(this._nextImage, 800);
+		this._prevImage = throttle(this._prevImage, 800);
 	}
 	_incrementCounter(){
 		this.imageTimer = setInterval(() => {

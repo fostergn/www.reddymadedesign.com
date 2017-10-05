@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleFullscreen } from '../../actions/actions';
+import { toggleFullscreen, changeWorkView, changeListFilter } from '../../actions/actions';
 import Single from './Single';
 
 const mapStateToProps = (state) => {
@@ -13,6 +13,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     toggleFullscreen: () => {
       dispatch(toggleFullscreen());
+    },
+    changeWorkView: (view) => {
+      dispatch(changeWorkView(view));
+    },
+    changeListFilter: (filter) => {
+      dispatch(changeListFilter(filter));
     },
   };
 };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import SingleImage from './SmallCarouselSingle';
+import { throttle } from 'lodash';
 
 export default class SingleImageList extends Component {
 	constructor(props){
@@ -10,6 +11,8 @@ export default class SingleImageList extends Component {
 			imageCounter: 1,
 			forwards: true
 		};
+		this._nextImage = throttle(this._nextImage, 800);
+		this._prevImage = throttle(this._prevImage, 800);
 	}
 	_incrementCounter(){
 		this.imageTimer = setInterval(() => {
@@ -17,16 +20,20 @@ export default class SingleImageList extends Component {
 		}, 6000)
 	}
 	_nextImage(){
-		this.setState({
-			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
-			forwards: true
-		})
+		// throttle(() => {
+			this.setState({
+				imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
+				forwards: true
+			})
+		// }, 1000);
 	}
 	_prevImage(){
-		this.setState({
-			imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
-			forwards: false
-		})
+		// throttle(() => {
+			this.setState({
+				imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
+				forwards: false
+			})
+		// }, 1000);
 	}
 	componentDidMount(){
 		this._incrementCounter();

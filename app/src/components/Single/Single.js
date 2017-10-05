@@ -3,10 +3,10 @@ import classNames from 'classnames';
 import RelatedProject from './RelatedProject';
 import SmallCarousel from './SmallCarousel';
 import Fullscreen from './Fullscreen';
-import Link from 'react-router';
+import { browserHistory } from 'react-router'
 import $ from 'jquery';
 
-const Single = ({ location, projects, isFullscreen, toggleFullscreen }) => {
+const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWorkView, changeListFilter }) => {
 
 	if (projects.length < 1){ return <div>loading...</div>}
 
@@ -23,8 +23,21 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen }) => {
 
 	const relatedProjects = related_projects[0].project.map(project => <RelatedProject key={project.ID} projects={projects} project={project} />)
 
-	const allTags = [primary_tag, ...secondary_tags].map(tag => tag === 'products' ? 'editions' : tag);
-	const tags = allTags.join(', ');
+	const handleTagClick = (tag) => {
+
+		changeListFilter('all');
+		changeListFilter(tag);
+		changeWorkView('list');
+		browserHistory.push('/work');
+	}
+
+	const tags = [primary_tag, ...secondary_tags].map((tag, index, array) => {
+		if (array.length === index + 1) {
+			return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions</span> : <span onClick={() => handleTagClick(tag)}>{tag}</span>
+		}
+
+		return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions, </span> : <span onClick={() => handleTagClick(tag)}>{tag}, </span>
+	});
 
   return (
 		<div className="single__container">
