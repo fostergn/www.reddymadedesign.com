@@ -14,6 +14,9 @@ const LandingImage = ({ index, projects, project, projectQuote }) => {
   return (
 		<Link to={`/work/${landingProject.slug}`} className={`quadrant__single quadrant__single--${index} quadrant__single--landing quadrant__single--image`}>
 			<img src={projectImage}/>
+			<p className="quadrant__quote" style={{zIndex: 100, width: '100%', color:'#fff', position:'absolute', left:'50%', top:'50%', transform: 'translate(-50%, -50%)', padding: '0 10%'}}>
+				{projectQuote}
+			</p>
 		</Link>
   );
 }

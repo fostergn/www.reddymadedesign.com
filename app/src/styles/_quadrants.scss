@@ -244,6 +244,8 @@
 				align-items:center;
 				justify-content:center;
 				line-height:1em;
+				background-color: rgba(234,73,77, .8);
+				opacity:1;
 			}
 		}
 	}
@@ -256,15 +258,19 @@
 		top:20px;
 
 		@include mq($breakpointC) {
-			display:none;
+			display:flex;
+			align-items:center;
+			justify-content:center;
 			position:absolute;
 			top:50%;
 			left:50%;
 			transform: translate(-50%, -50%);
 			color:#fff;
-			background-color: rgba(234,73,77, .5);
+			background-color: rgba(234,73,77, 0);
 			padding:.5em;
 			text-align:center;
+			opacity:0;
+			transition: background-color .2s, opacity .2s;
 		}
 	}
 }

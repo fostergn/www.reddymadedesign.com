@@ -9,12 +9,12 @@ const Single = ({ project }) => {
 	const projectImage = typeof work_image != 'undefined' && work_image !== false ? work_image.sizes.large : images[0].image.sizes.large;
 
   return (
-		<Link to={`/work/${project.slug}`} className="quadrant__image">
-			<div className="quadrant__image-hover">
+		<div className="quadrant__image">
+			<Link style={{display:'block'}} to={`/work/${project.slug}`} className="quadrant__image-hover">
 				<img src={projectImage}/>
 				<div className="quadrant__image-title">{title}</div>
-			</div>
-		</Link>
+			</Link>
+		</div>
   );
 }
 

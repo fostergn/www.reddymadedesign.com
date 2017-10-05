@@ -5,6 +5,9 @@
 .instagram {
 	&__image-container {
 		grid-column-end: span 16;
+		height:0;
+		padding-top:100%;
+		position:relative;
 
 		@include mq($breakpointB){
 
@@ -14,8 +17,17 @@
 		@include mq($breakpointC){}
 
 		& > img {
+			object-fit:cover;
 			width:100%;
-			padding-bottom:2px;
+			height:calc(100% - 12px);
+			position:absolute;
+			top:0;
+			left:0;
+		}
+
+		& p {
+			position:relative;
+			bottom:8px;
 		}
 	}
 }

@@ -12,8 +12,6 @@ const Landing = ({landing, projects, features}) => {
 
 	const landing_quadrants = quadrants.map((quad, index) => {
 
-		// const link = landing_fields[`link_${index + 1}`].post_name
-
 		return landing_fields[quad] === 'quotes' ? <LandingQuote index={index + 1} features={features} quotes={landing_fields[`news_${index + 1}`]} /> : <LandingImage index={index + 1} projects={projects} project={landing_fields[`project_${index + 1}`]} projectQuote={landing_fields[`project_quote_${index + 1}`]} />
 	});
 
