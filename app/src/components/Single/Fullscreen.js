@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FullscreenSingle from './FullscreenSingle';
 import { throttle } from 'lodash';
+import classNames from 'classnames';
 
 export default class Fullscreen extends Component {
 	constructor(props){
@@ -40,6 +41,29 @@ export default class Fullscreen extends Component {
 
 		if(!this.props.isFullscreen){return null}
 
+		if(this.props.images.length === 1){
+
+			const imageClasses = classNames({
+				'fullscreen__image' : true,
+				'fullscreen__image--bg' : this.props.images[0].image.sizes['large-width'] > this.props.images[0].image.sizes['large-height'],
+			});
+
+			return (
+				<ul className="fullscreen__container">
+					<div className="fullscreen__image-wrapper fullscreen__image-wrapper--active">
+						<div className="fullscreen__image-content">
+							<img className={imageClasses} src={this.props.images[0].image.sizes.large} />
+						</div>
+					</div>
+					<div className="fullscreen__controls">
+						<div className="fullscreen__left-control">{this.props.images[this.state.imageCounter - 1].caption}</div>
+						<div className="">{this.state.imageCounter} / {this.props.images.length}</div>
+						<div className="fullscreen__right-control" onClick={() => this.props.toggleFullscreen()}>Close</div>
+					</div>
+				</ul>
+			)
+		}
+
 		const imageList = this.props.images.map((img, i, array) => {
 					if (img.image.sizes) {
 						return (
@@ -56,7 +80,7 @@ export default class Fullscreen extends Component {
 								total={array.length}
 								caption={img.caption}
 								toggleFullscreen={this.props.toggleFullscreen}
-								img={img.image.sizes.large}
+								img={img.image.url}
 								isLandscape={img.image.sizes['large-width'] > img.image.sizes['large-height']}
 							/>
 						)

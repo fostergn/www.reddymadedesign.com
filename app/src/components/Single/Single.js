@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import RelatedProject from './RelatedProject';
 import SmallCarousel from './SmallCarousel';
+import SingleHeroVideo from './SingleHeroVideo';
 import Fullscreen from './Fullscreen';
 import { browserHistory } from 'react-router'
 import $ from 'jquery';
@@ -19,7 +20,7 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWork
 		return project.slug === pathSlug
 	});
 
-	const { title, hero_image, description, images, primary_tag, secondary_tags, related_projects } = project.acf;
+	const { title, hero_image, description, images, primary_tag, secondary_tags, related_projects, has_video_for_hero, hero_video } = project.acf;
 
 	const relatedProjects = related_projects[0].project.map(project => <RelatedProject key={project.ID} projects={projects} project={project} />)
 
@@ -39,11 +40,11 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWork
 		return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions, </span> : <span onClick={() => handleTagClick(tag)}>{tag}, </span>
 	});
 
+	const hero = has_video_for_hero ? <SingleHeroVideo heroVideo={hero_video} /> : <div className="single__hero"><img src={hero_image.url} /></div>;
+
   return (
 		<div className="single__container">
-			<div className="single__hero">
-				<img src={hero_image.sizes.large} />
-			</div>
+			{hero}
 			<div className="single__split">
 				<div className="single__split-left">
 					<div className="single__grid-left">

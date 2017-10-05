@@ -7,9 +7,6 @@ import GridSingle from './GridQuadSingle';
 const Grid = ({ projects,  workFilterOpen, gridFilter, quadrant, quadrantMode, updateQuadrant, updateQuadrantMode, category, quadrantNumber, quadrantName}) => {
 
 	const handleMouseEnter = (quadrant) => {
-		console.log('handleMouse enter: ');
-		console.log('quadrantMode: ', quadrantMode);
-		console.log('quadrant: ', quadrant);
 		if (quadrantMode === 'click' && gridFilter !== 'all') {return}
 		updateQuadrantMode('hover');
 		updateQuadrant(quadrant);

@@ -27,7 +27,7 @@ const SingleImage = ({ img, position, caption, show, next, prev, toggleFullscree
 
 	return (
 		<div className={wrapperClasses}>
-			<p className={captionClasses}>Here is the image caption for now.</p>
+			<p className={captionClasses}>{caption}</p>
 			<img className={imageClasses} src={img} />
 		</div>
 	)

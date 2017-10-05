@@ -23,9 +23,9 @@ class Grid extends Component {
 	  return (
 			<div className="quadrant__container">
 				<GridQuadrant workFilterOpen={workFilterOpen} gridFilter={gridFilter} projects={architectureProjects} quadrantName="architecture" category="Architecture" quadrantNumber={1} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-				<GridQuadrant workFilterOpen={workFilterOpen} gridFilter={gridFilter} projects={interiorProjects} quadrantName="interior" category="Interior Design" quadrantNumber={4} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+				<GridQuadrant workFilterOpen={workFilterOpen} gridFilter={gridFilter} projects={interiorProjects} quadrantName="interior" category="Interior Design" quadrantNumber={2} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
 				<GridQuadrant workFilterOpen={workFilterOpen} gridFilter={gridFilter} projects={collaborationsProjects} quadrantName="collaborations" category="Collaborations" quadrantNumber={3} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
-				<GridQuadrant workFilterOpen={workFilterOpen} gridFilter={gridFilter} projects={productsProjects} quadrantName="products" category="Editions" quadrantNumber={2} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
+				<GridQuadrant workFilterOpen={workFilterOpen} gridFilter={gridFilter} projects={productsProjects} quadrantName="products" category="Editions" quadrantNumber={4} quadrant={quadrant} quadrantMode={quadrantMode} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode}/>
 			</div>
 	  );
 	}

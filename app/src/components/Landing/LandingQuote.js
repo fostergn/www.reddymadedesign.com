@@ -12,9 +12,7 @@ export default class LandingQuote extends Component {
 		};
 	}
 	_incrementCounter(){
-		console.log('incrementing counter start');
 		this.opacityTimer = setInterval(() => {
-			console.log('incrementing counter');
 			this._nextQuote();
 		}, 6000)
 	}

@@ -15,10 +15,12 @@
 	    width: 102%;
 	    height: 100%;
 		overflow: auto;
-		transition: all 1s;
+		transition: width 1s, height 1s;
 		background-color:#fff;
 		box-sizing:content-box;
 		z-index:0;
+		backface-visibility: hidden;
+		transform-style: preserve-3d;
 		// margin-top:40px;
 
 		@include mq($breakpointC) {
@@ -139,6 +141,8 @@
 		z-index:10;
 		transition:top .2s;
 		padding-left:12px;
+		backface-visibility: hidden;
+		transform: translate3d(0, 0, 0);
 		// margin-top:$vertical-margin-s;
 
 		@include mq($breakpointC){
@@ -256,6 +260,8 @@
 		text-transform: uppercase;
 		position:relative;
 		top:20px;
+		backface-visibility: hidden;
+		transform: translateZ(0) scale(1.0, 1.0);
 
 		@include mq($breakpointC) {
 			display:flex;

@@ -20,20 +20,16 @@ export default class SingleImageList extends Component {
 		}, 6000)
 	}
 	_nextImage(){
-		// throttle(() => {
-			this.setState({
-				imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
-				forwards: true
-			})
-		// }, 1000);
+		this.setState({
+			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
+			forwards: true
+		})
 	}
 	_prevImage(){
-		// throttle(() => {
-			this.setState({
-				imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
-				forwards: false
-			})
-		// }, 1000);
+		this.setState({
+			imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
+			forwards: false
+		})
 	}
 	componentDidMount(){
 		this._incrementCounter();
@@ -42,6 +38,21 @@ export default class SingleImageList extends Component {
 		clearInterval(this.imageTimer);
 	}
 	render(){
+
+		if (this.props.images.length === 1) {
+			return (
+				<div className="single__split-right" style={{position:'relative'}}>
+					<ul className="gallery__wrapper">
+						<p className='gallery__fullscreen' onClick={() => this.props.toggleFullscreen()}>fullscreen</p>
+						<div className='gallery__image-wrapper gallery__image-wrapper--active'>
+							<p className='gallery__image-caption'></p>
+							<img className='gallery__image--bg' src={this.props.images[0].image.sizes.large} />
+						</div>
+					</ul>
+				</div>
+			)
+		}
+
 		const imageList = this.props.images.map((img, i, array) => {
 					if (img.image.sizes) {
 						return (
@@ -53,8 +64,7 @@ export default class SingleImageList extends Component {
 								show={this.state.imageCounter === (i+1)}
 								position={i+1}
 								total={array.length}
-								credit={img.image_credit}
-								// toggleFullscreen={this.props.toggleFullscreen}
+								caption={img.caption}
 								img={img.image.sizes.large} />
 						)
 					}

@@ -21,9 +21,6 @@ initialDispatch(store);
 
 browserHistory.listen( location =>  {
 
-  console.log('lcation: ', location);
-  console.log('store: ', store.getState().menuOpen);
-
   if(store.getState().menuOpen) {
 
     store.dispatch(toggleMenu());
