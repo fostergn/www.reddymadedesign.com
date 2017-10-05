@@ -8,11 +8,13 @@ import Staff from './Staff';
 import StaffBio from './StaffBio';
 import Featured from './Featured';
 
-const About = ({about}) => {
+const About = ({about, features}) => {
 
-	if(about.length < 1){ return null }
+	if(about.length < 1 || features.length < 1){ return null }
 
-	const { description, staff, facebook_url, instagram_url, linkedin_url } = about[0].acf;
+	const { description, featured_list, staff, facebook_url, instagram_url, linkedin_url } = about[0].acf;
+
+	const featured_about = featured_list.map(about_feat => features.find(feature => feature.id === about_feat.ID));
 
 	const staffBioList = [staff[0]].map(member => <StaffBio member={member} />);
 
@@ -35,7 +37,7 @@ const About = ({about}) => {
 				<Map />
 				<Social facebook_url={facebook_url} instagram_url={instagram_url} linkedin_url={linkedin_url} />
 				<Staff staff={staff} />
-				<Featured />
+				<Featured features={featured_about} />
 			</div>
 		</div>
 	</div>

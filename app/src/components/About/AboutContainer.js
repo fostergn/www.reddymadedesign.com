@@ -4,6 +4,7 @@ import About from './About';
 const mapStateToProps = (state) => {
   return {
     about: state.about,
+    features: state.features,
   };
 };
 
