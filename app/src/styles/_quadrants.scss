@@ -14,7 +14,8 @@
 		position:relative;
 	    width: 102%;
 	    height: 100%;
-		overflow: auto;
+		overflow-y: auto;
+		overflow-x:hidden;
 		transition: width 1s, height 1s;
 		background-color:#fff;
 		box-sizing:content-box;
@@ -25,8 +26,8 @@
 
 		@include mq($breakpointC) {
 			position:absolute;
-		    width: calc(50% - 1px);
-		    height: calc(50% - 1px);
+		    width: calc(50% - 0.625px);
+		    height: calc(50% - 0.625px);
 			overflow:hidden;
 		}
 
@@ -52,6 +53,15 @@
 				border-left:2.5px solid $red;
 			}
 
+			&.quadrant__single--work {
+
+				border-bottom:none;
+
+				@include mq($breakpointC){
+					border-bottom:2.5px solid $red;
+				}
+			}
+
 			&.quadrant__single--hover-horizontal {width:100%;}
 			&.quadrant__single--hover-vertical {height:100%;}
 		}
@@ -60,9 +70,19 @@
 			bottom:0;
 			left:0;
 			border-top:2.5px solid $red;
+			order:4;
 
 			@include mq($breakpointC){
 				border-right:2.5px solid $red;
+			}
+
+			&.quadrant__single--work {
+
+				border-top:none;
+
+				@include mq($breakpointC){
+					border-top:2.5px solid $red;
+				}
 			}
 
 			&.quadrant__single--hover-horizontal {width:100%;}
@@ -73,9 +93,12 @@
 			bottom:0;
 			right:0;
 			border-top:2.5px solid $red;
+			order:3;
+			margin-bottom:40px;
 
 			@include mq($breakpointC){
 				border-left:2.5px solid $red;
+				margin-bottom:0px;
 			}
 
 			&.quadrant__single--hover-horizontal {width:100%;}

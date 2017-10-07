@@ -1,4 +1,4 @@
-import { addInstagramImages, fetchPosts } from './actions/actions';
+import { addInstagramImages, fetchPosts, markLoaded } from './actions/actions';
 import fetch from 'isomorphic-fetch';
 
 const initialDispatch = store => {
@@ -10,6 +10,10 @@ const initialDispatch = store => {
 	store.dispatch(fetchPosts('project?per_page=100'));
 	store.dispatch(fetchPosts('pages?slug=about'));
 	store.dispatch(fetchPosts('pages?slug=landing'));
+
+	setTimeout(() => {
+		store.dispatch(markLoaded());
+	}, 1000);
 }
 
 export default initialDispatch;

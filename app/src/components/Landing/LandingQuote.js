@@ -34,6 +34,10 @@ export default class LandingQuote extends Component {
 
 		const landing_quotes = quotes.map(quote => features.find(feature => feature.id === quote.news_item.ID));
 
+		const longest_quote = landing_quotes.reduce((a, b) => a.acf.summary.length > b.acf.summary.length ? a : b);
+
+		// const rendered_longest_quote = index === 1 ? longest_quote.acf.summary : '';
+
 		const quoteList = landing_quotes.map((quote, index) => {
 
 			const classes = classNames({
@@ -42,12 +46,17 @@ export default class LandingQuote extends Component {
 				'quadrant__quote-container--active': index + 1 === this.state.quoteCounter
 			});
 
+			const rendered_longest_quote = index === 1 ? longest_quote.acf.summary : '';
+
 			return (
+				<div>
+				<p style={{padding:'0 10%', opacity:0}} className="quadrant__quote">{rendered_longest_quote}</p>
 				<div className={classes}>
 					<p className="quadrant__quote">
 						{quote.acf.summary}
 						<a style={{display:'block'}} target="_blank" href={quotes[index].news_item_link} className="read-more">Read More</a>
 					</p>
+				</div>
 				</div>
 			);
 		});

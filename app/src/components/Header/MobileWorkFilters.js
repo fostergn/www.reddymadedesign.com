@@ -33,7 +33,7 @@ const MobileWorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilter
 		});
 	}
 
-	const handleClick = (filter, view) => {
+	const handleClick = (filter, view, number) => {
 		if (view === 'grid') {
 			changeGridFilter(filter);
 			updateQuadrantMode('click');
@@ -44,6 +44,12 @@ const MobileWorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilter
 			changeListFilter(filter)
 
 		}
+
+		// scroll to section
+		$('html, body').scrollTop(0);
+		$('html, body').animate({
+	        scrollTop: $(`.quadrant__single--${number}`).offset().top - 40
+	    }, 2000);
 	}
 
 	const handleFilterClick = () => {
@@ -53,11 +59,11 @@ const MobileWorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilter
   return (
         <div className={filterContainerClass}>
         	<ul className="mobile-work-filters__list">
-        		<li onClick={() => handleClick('all', workView)} className={filterClass('all')}>All</li>
-        		<li onClick={() => handleClick('architecture', workView)} className={filterClass('architecture')}>Architecture</li>
-        		<li onClick={() => handleClick('interior', workView)} className={filterClass('interior')}>Interior Design</li>
-        		<li onClick={() => handleClick('collaborations', workView)} className={filterClass('collaborations')}>Collaborations</li>
-        		<li onClick={() => handleClick('products', workView)} className={filterClass('products')}>Editions</li>
+        		<li onClick={() => handleClick('all', workView, 1)} className={filterClass('all')}>All</li>
+        		<li onClick={() => handleClick('architecture', workView, 1)} className={filterClass('architecture')}>Architecture</li>
+        		<li onClick={() => handleClick('interior', workView, 3)} className={filterClass('interior')}>Interior Design</li>
+        		<li onClick={() => handleClick('collaborations', workView, 2)} className={filterClass('collaborations')}>Collaborations</li>
+        		<li onClick={() => handleClick('products', workView, 4)} className={filterClass('products')}>Editions</li>
         		<div onClick={() => handleFilterClick()} className="mobile-close-filter">X</div>
         	</ul>
         	<div className={viewClass}>

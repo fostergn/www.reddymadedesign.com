@@ -1,26 +1,27 @@
 import { connect } from 'react-redux';
 import Work from './Work';
-// import { toggleFilterMenu } from '../actions/actions';
+import { markLoaded } from '../../actions/actions';
 
 const mapStateToProps = (state) => {
   return {
     workView: state.workView,
     workFilter: state.workFilter,
     workFilterOpen: state.workFilterOpen,
+    hasLoaded: state.hasLoaded,
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     toggleFilterMenu: () => {
-//       dispatch(toggleFilterMenu());
-//     },
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    markLoaded: () => {
+      dispatch(markLoaded());
+    },
+  };
+};
 
 const WorkContainer = connect(
-  mapStateToProps
-  // mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Work);
 
 export default WorkContainer;

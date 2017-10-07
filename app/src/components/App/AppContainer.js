@@ -3,7 +3,7 @@ import App from './App';
 
 const mapStateToProps = (state) => {
   return {
-    // isNavOpen: state.isNavOpen,
+    hasLoaded: state.hasLoaded,
   };
 };
 

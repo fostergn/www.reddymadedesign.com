@@ -14,8 +14,6 @@ const About = ({about, features}) => {
 
 	const { description, featured_list, staff, facebook_url, instagram_url, linkedin_url } = about[0].acf;
 
-	const featured_about = featured_list.map(about_feat => features.find(feature => feature.id === about_feat.ID));
-
 	const staffBioList = [staff[0]].map(member => <StaffBio member={member} />);
 
   return (
@@ -37,7 +35,7 @@ const About = ({about, features}) => {
 				<Map />
 				<Social facebook_url={facebook_url} instagram_url={instagram_url} linkedin_url={linkedin_url} />
 				<Staff staff={staff} />
-				<Featured features={featured_about} />
+				<Featured featured_list={featured_list} />
 			</div>
 		</div>
 	</div>

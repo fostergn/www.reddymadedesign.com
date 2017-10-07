@@ -13,7 +13,7 @@ const News = ({ instagram, features }) => {
 			<div className="template-half template-half--left">
 				<div className="about-content__container">
 					<article className="about-content__article">
-						<header className="about-content__header">Features</header>
+						<header className="about-content__header">Updates</header>
 						{featuresList}
 					</article>
 				</div>

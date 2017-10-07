@@ -3,7 +3,7 @@ import List from '../List/ListContainer';
 import WorkGrid from '../Grid/GridContainer';
 import classNames from 'classnames';
 
-const Work = ({workView, workFilter, workFilterOpen}) => {
+const Work = ({hasLoaded, markLoaded,workView, workFilter, workFilterOpen}) => {
 
 	const workContent = workView === 'grid' ? <WorkGrid workFilterOpen={workFilterOpen} workFilter={workFilter} /> : <List workFilter={workFilter}/>
 

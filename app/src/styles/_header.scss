@@ -66,6 +66,12 @@
 
 	    &--inactive {display:none;}
 
+	    width:15px;
+
+	    @include mq(350px) {
+			width: 20px;
+	    }
+
 	    @include mq($breakpointC) {
 	    	display:none;
 	    }
@@ -226,6 +232,7 @@
 	    display: none;
 	    align-items: center;
 	    cursor:pointer;
+	    font-weight: 600;
 
 	    @include mq($breakpointB) {
 	    	display:flex;
@@ -375,6 +382,7 @@
 
 .mobile-filter-button {
 	cursor:pointer;
+	font-weight: 600;
 }
 
 .mobile-close-filter {

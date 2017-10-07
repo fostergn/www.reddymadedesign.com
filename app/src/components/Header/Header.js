@@ -12,8 +12,6 @@ import hamburger from '../../images/hamburger.svg';
 
 const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeGridFilter, changeListFilter, gridFilter, listFilter, changeWorkView}) => {
 
-  if(about.length < 1) {return <div>loading...</div>}
-
 	const isActive = (location, name) => location.includes(name);
 
   const aboutClass = classNames({
@@ -49,6 +47,8 @@ const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, me
 
   const filterButton = ['/work', 'work', 'list'].includes(path) ? <FilterButton toggleFilterMenu={toggleFilterMenu} workFilterOpen={workFilterOpen}/> : '';
 
+  const about_quote = about.length < 1 ? 'loading...' : <p className="header__mobile-quote">{about[0].acf.mobile_menu_quote}<span>&mdash; {about[0].acf.mobile_menu_quote_author}</span></p>
+
   return (
   	<div>
   		<div className="header__container">
@@ -67,10 +67,7 @@ const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, me
               <li className={aboutClass}><Link to="/about">About</Link></li>
               <li className={workClass}><Link to="/work">Work</Link></li>
               <li className={newsClass}><Link to="/news">News</Link></li>
-              <p className="header__mobile-quote">
-                {about[0].acf.mobile_menu_quote}
-                <span>&mdash; {about[0].acf.mobile_menu_quote_author}</span>
-              </p>
+              {about_quote}
             </ul>
             <ul className="mobile__sidebar">
               <li className="sidebar__list-item"><a target="_blank" href="https://www.facebook.com/reddymadedesign/"><img src={facebook}/></a></li>

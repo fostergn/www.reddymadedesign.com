@@ -65,7 +65,7 @@ export default class SingleImageList extends Component {
 								position={i+1}
 								total={array.length}
 								caption={img.caption}
-								img={img.image.sizes.large} />
+								img={img.image.url} />
 						)
 					}
 		})

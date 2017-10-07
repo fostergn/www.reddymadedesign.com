@@ -20,7 +20,8 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWork
 		return project.slug === pathSlug
 	});
 
-	const { title, hero_image, description, images, primary_tag, secondary_tags, related_projects, has_video_for_hero, hero_video } = project.acf;
+	const { title, hero_image, description, primary_tag, secondary_tags, related_projects, has_video_for_hero, hero_video } = project.acf;
+	let { images } = project.acf;
 
 	const relatedProjects = related_projects[0].project.map(project => <RelatedProject key={project.ID} projects={projects} project={project} />)
 
@@ -32,9 +33,16 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWork
 		browserHistory.push('/work');
 	}
 
+	// dupe images if 2 for carousel functionality
+	images = images.length === 2 ? [...images, ...images] : images;
+
 	const tags = [primary_tag, ...secondary_tags].map((tag, index, array) => {
 		if (array.length === index + 1) {
-			return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions</span> : <span onClick={() => handleTagClick(tag)}>{tag}</span>
+			return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions</span> : tag === 'products' ?  <span onClick={() => handleTagClick('interior')}>interior design</span> : <span onClick={() => handleTagClick(tag)}>{tag}</span>
+		}
+
+		if (tag === 'interior') {
+			return <span onClick={() => handleTagClick('interior')}>interior design, </span>;
 		}
 
 		return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions, </span> : <span onClick={() => handleTagClick(tag)}>{tag}, </span>

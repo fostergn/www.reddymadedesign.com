@@ -11,10 +11,16 @@ import {
     ADD_INSTAGRAM_IMAGES,
     RECEIVE_POSTS,
     TOGGLE_MENU,
+    MARK_LOADED,
 } from '../actions/actions';
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        case MARK_LOADED:
+            return Object.assign({}, state, {
+                hasLoaded: true
+            });
 
         case TOGGLE_FULLSCREEN:
             return Object.assign({}, state, {

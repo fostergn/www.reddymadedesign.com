@@ -1,10 +1,13 @@
 import React from 'react';
 import LandingQuote from './LandingQuote';
 import LandingImage from './LandingImage';
+// import Loading from '../Loading/Loading';
 
-const Landing = ({landing, projects, features}) => {
+const Landing = ({hasLoaded, markLoaded, landing, projects, features}) => {
 
-	if(landing.length < 1) { return <div>landing...</div> }
+	if(landing.length < 1) { return <div></div> }
+
+	if (!hasLoaded) {markLoaded()}
 
 	const landing_fields = landing[0].acf;
 

@@ -12,6 +12,7 @@ const initialState = {
   quadrant: 'none', // 1, 2, 3, 4
   isFullscreen: false,
   menuOpen: false,
+  hasLoaded: false,
 };
 
 export default initialState;

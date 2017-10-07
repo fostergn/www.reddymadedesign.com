@@ -6,8 +6,9 @@ const ListItem = ({project, listFilter}) => {
 
 	const { title, primary_tag, secondary_tags } = project.acf;
 
-	const allTags = [primary_tag, ...secondary_tags];
-	const tags = allTags.join(', ');
+	const allTags = [primary_tag, ...secondary_tags]
+	const renderedTags = allTags.map(tag => tag === 'interior' ? 'interior design' : tag).map(tag => tag === 'products' ? 'editions' : tag);
+	const tags = renderedTags.join(', ');
 
 	const listTextClass = classNames({
 		'list__text-item': true,

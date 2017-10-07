@@ -28,6 +28,7 @@ const Grid = ({ projects,  workFilterOpen, gridFilter, quadrant, quadrantMode, u
 	const quadClass = (quad) => {
 		return classNames({
 			'quadrant__single': true,
+			'quadrant__single--work': true,
 			[`quadrant__single--${quad}`]: true,
 			[`quadrant__single--hover${hoverVariable}`]: quadrantMode === 'hover' && quadrant === quad,
 			'quadrant__single--click': quadrantMode === 'click' && quadrant === quadrantName,

@@ -11,8 +11,15 @@ export const UPDATE_QUADRANT_MODE = 'UPDATE_QUADRANT_MODE'
 export const ADD_INSTAGRAM_IMAGES = 'ADD_INSTAGRAM_IMAGES'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
+export const MARK_LOADED = 'MARK_LOADED'
 
 const baseUrl = process.env.NODE_ENV !== 'production' ? `http://localhost/api` : '/api';
+
+export function markLoaded(){
+    return {
+        type: MARK_LOADED
+    }
+}
 
 export function toggleFullscreen(){
     return {
