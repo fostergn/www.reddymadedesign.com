@@ -137,17 +137,40 @@
 // 	border:6px solid red;
 // }
 
-.gallery__image-wrapper--active {
-	transform:translateX(0%);
-	// background-color:#fff;
+.forwards {
+
+	& .gallery__image-wrapper--active {
+		transform:translateX(0%);
+		// background-color:#fff;
+	}
+
+	& .gallery__image-wrapper--prev {
+		transform:translateX(-100%);
+		z-index:-1;
+	}
+
+	& .gallery__image-wrapper--next {
+		transform:translateX(100%);
+		z-index:-2;
+	}
 }
-.gallery__image-wrapper--prev {
-	transform:translateX(-100%);
-	z-index:-1;
-}
-.gallery__image-wrapper--next {
-	transform:translateX(100%);
-	z-index:-2;
+
+.backwards {
+
+	& .gallery__image-wrapper--active {
+		transform:translateX(0%);
+		// background-color:#fff;
+	}
+
+	& .gallery__image-wrapper--prev {
+		transform:translateX(-100%);
+		z-index:-2;
+	}
+
+	& .gallery__image-wrapper--next {
+		transform:translateX(100%);
+		z-index:5;
+	}
 }
 
 .carousel {

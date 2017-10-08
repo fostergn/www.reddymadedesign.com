@@ -15,17 +15,20 @@ export default class SingleImageList extends Component {
 		this._prevImage = throttle(this._prevImage, 800);
 	}
 	_incrementCounter(){
+		console.log('increment counter');
 		this.imageTimer = setInterval(() => {
 			this._nextImage();
 		}, 6000)
 	}
 	_nextImage(){
+		console.log('next image');
 		this.setState({
 			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
 			forwards: true
 		})
 	}
 	_prevImage(){
+		console.log('previous image');
 		this.setState({
 			imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
 			forwards: false
@@ -58,7 +61,7 @@ export default class SingleImageList extends Component {
 						return (
 							<SingleImage
 								nextImage={this._nextImage}
-								key={img.image.sizes.large}
+								key={img.image.sizes.large + i}
 								prev={this.state.imageCounter - 2 === (i) || (this.state.imageCounter === 1 && i + 1 === array.length)}
 								next={this.state.imageCounter === (i) || (this.state.imageCounter === array.length && i === 0)}
 								show={this.state.imageCounter === (i+1)}
@@ -79,9 +82,15 @@ export default class SingleImageList extends Component {
 			'gallery__fullscreen--hide' : this.state.imageCounter === 1,
 		});
 
+		const galleryClasses = classNames({
+			'gallery__wrapper': true,
+			'forwards': this.state.forwards,
+			'backwards': !this.state.forwards
+		});
+
 		return (
 			<div className="single__split-right" style={{position:'relative'}}>
-				<ul className="gallery__wrapper" onClick={() => handleClick()}>
+				<ul className={galleryClasses}>
 					<p className={fullscreenClasses} onClick={() => this.props.toggleFullscreen()}>fullscreen</p>
 					{imageList}
 				</ul>
