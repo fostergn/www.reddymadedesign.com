@@ -178,6 +178,8 @@ p.quadrant__quote {
 	padding: 20px 10%;
 	opacity:0;
 	transition: opacity .5s;
+	max-height:100%;
+	overflow:auto;
 
 	&--active {
 		opacity: 1;
@@ -195,4 +197,8 @@ p.quadrant__quote {
 		font-size:.94rem;
 		letter-spacing:.075rem;
 	}
+}
+
+.quadrant__container--landing .quadrant__single {
+	margin-bottom:0;
 }

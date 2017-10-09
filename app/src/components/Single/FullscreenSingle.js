@@ -8,7 +8,7 @@ const SingleImage = ({ img, position, forwards, total, caption, show, prev, next
 		'fullscreen__image-wrapper--active' : show,
 		'fullscreen__image-wrapper--prev' : prev,
 		'fullscreen__image-wrapper--next' : next,
-		'fullscreen__image-wrapper--backwards' : !forwards,
+		// 'fullscreen__image-wrapper--backwards' : !forwards,
 	});
 
 	const imageClasses = classNames({

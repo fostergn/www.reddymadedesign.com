@@ -3,8 +3,6 @@ import classNames from 'classnames';
 
 const Loading = ({hasLoaded}) => {
 
-	console.log('has loaded? ; ', hasLoaded);
-
 	const loadedClasses = classNames({
 		loading: true,
 		'loading--inactive': hasLoaded

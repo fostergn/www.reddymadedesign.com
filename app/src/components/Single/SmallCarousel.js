@@ -15,20 +15,17 @@ export default class SingleImageList extends Component {
 		this._prevImage = throttle(this._prevImage, 800);
 	}
 	_incrementCounter(){
-		console.log('increment counter');
 		this.imageTimer = setInterval(() => {
 			this._nextImage();
 		}, 6000)
 	}
 	_nextImage(){
-		console.log('next image');
 		this.setState({
 			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
 			forwards: true
 		})
 	}
 	_prevImage(){
-		console.log('previous image');
 		this.setState({
 			imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
 			forwards: false
