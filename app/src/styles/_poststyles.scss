@@ -15,12 +15,13 @@ html {
 
 body {
 	height: 100%;
-    overflow: auto;
+  overflow: auto;
 }
 
 html,body {
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Video background */

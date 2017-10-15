@@ -61,7 +61,7 @@ const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, me
   				</ul>
           <div className="header__mobile-cover"></div>
           <img onClick={() => toggleMenu()} className={mobileMenuIconClass} style={{width:20}} src={hamburger}></img>
-          <p onClick={() => toggleMenu()} className={mobileMenuCloseIconClass} style={{width:'auto'}}>close</p>
+          <p onClick={() => toggleMenu()} className={mobileMenuCloseIconClass} style={{width:'auto', fontWeight:'bold', fontSize:20}}>X</p>
           <ul className={mobileMenuClass}>
             <ul>
               <li className={aboutClass}><Link to="/about">About</Link></li>

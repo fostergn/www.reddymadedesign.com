@@ -2,9 +2,7 @@
 	&__container {
 
 		margin-top:0px;
-		transition:all .2s;
-		position: relative;
-    	top: -1px;
+		transition:margin-top .2s;
 
 		&--push {
 
@@ -12,6 +10,11 @@
 				margin-top:40px;
 			}
 		}
+
+		@include mq($breakpointC){
+			position: relative;
+    		top: -1px;
+    	}
 	}
 }
 
@@ -45,14 +48,15 @@
 	}
 
 	&__right-content {
-		display:grid;
-		grid-gap:6px;
-		grid-template-columns: repeat(16, 1fr);
-		padding: 0 calc(6.25% + 6px);
-		margin-bottom:44px;
+		display:none;
 
 		@include mq($breakpointC){
 			margin-bottom:0;
+			display:grid;
+			grid-gap:6px;
+			grid-template-columns: repeat(16, 1fr);
+			padding: 0 calc(6.25% + 6px);
+			margin-bottom:44px;
 		}
 	}
 

@@ -6,7 +6,7 @@
     	color:$red;
 
 		@include mq($breakpointC){
-			height: calc(100vh - 40px);
+			height: calc(100vh - 41px);
 		}
 	}
 
@@ -16,8 +16,8 @@
 	    height: 100%;
 		overflow-y: auto;
 		overflow-x:hidden;
-		// transition: width 1s, height 1s;
-		transition: all 1s;
+		transition: width 1s, height 1s;
+		// transition: all 1s;
 		background-color:#fff;
 		box-sizing:content-box;
 		z-index:0;
@@ -27,9 +27,10 @@
 
 		@include mq($breakpointC) {
 			position:absolute;
-		    width: calc(50% - 0.625px);
-		    height: calc(50% - 0.625px);
+		    width: calc(50% - 1px);
+		    height: calc(50% - 1.25px);
 			overflow:hidden;
+			overflow-x:hidden;
 		}
 
 		&--1 {
@@ -119,7 +120,7 @@
 	&__content {
 		width:calc(100vw - 40px);
 		height:100%;
-		overflow:auto;
+		overflow-y:scroll;
 		position:relative;
 		top:0;
 
@@ -367,6 +368,7 @@
 	overflow:inherit;
 
 	@include mq($breakpointC) {
-		overflow:auto;
+		overflow-y: scroll;
+		overflow-x:hidden;
 	}
 }

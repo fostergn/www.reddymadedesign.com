@@ -9,7 +9,7 @@ import $ from 'jquery';
 
 const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWorkView, changeListFilter }) => {
 
-	if (projects.length < 1){ return <div>loading...</div>}
+	if (projects.length < 1){ return <div></div>}
 
 	$('body').animate({ scrollTop: 0});
 

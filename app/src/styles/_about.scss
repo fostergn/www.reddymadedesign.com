@@ -54,6 +54,11 @@
 		letter-spacing:0.05em;
 	}
 	&__copy {
+
+		&--feature {
+			display:table;
+		}
+
 		&--about {
 			& p {
 				&:nth-child(n+2) {

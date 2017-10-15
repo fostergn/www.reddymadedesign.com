@@ -71,7 +71,7 @@ export default class Fullscreen extends Component {
 								fullscreen={this}
 								nextImage={this._nextImage}
 								prevImage={this._prevImage}
-								key={img.image.sizes.large}
+								key={img.image.sizes.large + i}
 								forwards={this.state.forwards}
 								prev={this.state.forwards ? (this.state.imageCounter - 2 === (i) || (this.state.imageCounter === 1 && i + 1 === array.length)) : (this.state.imageCounter === (i) || (this.state.imageCounter === array.length && i === 0))}
 								next={this.state.forwards ? (this.state.imageCounter === (i) || (this.state.imageCounter === array.length && i === 0)) : (this.state.imageCounter - 2 === (i) || (this.state.imageCounter === 1 && i + 1 === array.length))}
@@ -87,15 +87,21 @@ export default class Fullscreen extends Component {
 					}
 		})
 
+		const containerClasses = classNames({
+			'fullscreen__container': true,
+			'forwards': this.state.forwards,
+			'backwards': !this.state.forwards
+		});
+
 		return (
-			<ul className="fullscreen__container">
+			<ul className={containerClasses}>
 				{imageList}
 				<div className="fullscreen__controls">
 					<div className="fullscreen__left-control">{this.props.images[this.state.imageCounter - 1].caption}</div>
 					<div className="">{this.state.imageCounter} / {this.props.images.length}</div>
 					<div className="fullscreen__right-control" onClick={() => this.props.toggleFullscreen()}>Close</div>
 				</div>
-				<div className="fullscreen__target-left"  onClick={() => this._prevImage() }></div>
+				<div className="fullscreen__target-left"  onClick={() => this._nextImage() }></div>
 				<div className="fullscreen__target-right"  onClick={() => this._nextImage() }></div>
 			</ul>
 		)

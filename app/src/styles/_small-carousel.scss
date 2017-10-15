@@ -13,6 +13,7 @@
 		grid-row: 2;
 		height:100%;
 		width:100%;
+		border-bottom:2.5px solid $red;
 
 		// margin-top:50px;
 		@include mq($breakpointB){
@@ -22,6 +23,7 @@
 		}
 		@include mq($breakpointC){
 			grid-column: span 5;
+			border-bottom:none;
 			// margin-bottom:90px;
 		}
 	}
@@ -33,12 +35,22 @@
 	    top: 50%;
 	    left: 50%;
 	    transform: translate(-50%, -50%);
-	    object-fit:cover;
+	    object-fit:contain;
 
 	    &--bg {
-	    	object-fit:cover;
+	    	object-fit:contain;
 	    	height:100%;
 	    	width:100%;
+	    }
+
+	    @include mq($breakpointC){
+			object-fit:cover;
+
+		    &--bg {
+		    	object-fit:cover;
+		    	height:100%;
+		    	width:100%;
+		    }
 	    }
 
 	    &--portrait {}
@@ -156,6 +168,10 @@
 }
 
 .backwards {
+	// & .gallery__image-wrapper {
+	// 	transform:translateX(-100%);
+	// 	z-index:0;
+	// }
 
 	& .gallery__image-wrapper--active {
 		transform:translateX(0%);

@@ -2,16 +2,16 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducers/reducers';
 import initialState from './initialState';
-// import { loadState, saveState } from './localStorage';
-// import { throttle } from 'lodash';
+import { loadState, saveState } from './localStorage';
+import { throttle } from 'lodash';
 
 export function configureStore() {
 
   let middleware = [thunk];
 
   let store = {};
-  // const initializedState = loadState() !== undefined ? loadState() : initialState;
-  const initializedState = initialState;
+  const initializedState = loadState() !== undefined ? loadState() : initialState;
+  // const initializedState = initialState;
 
   // Load Chrome Dev Tools Extension if DEV mode
   if (process.env.NODE_ENV !== 'production') {
@@ -28,9 +28,26 @@ export function configureStore() {
     store = createStore(reducer, initializedState, applyMiddleware(...middleware));
   }
 
-  // store.subscribe(throttle(() => {
-  //   saveState(store.getState());
-  // }, 1000));
+  store.subscribe(throttle(() => {
+    const {landing, features, instagram, projects, about} = store.getState();
+
+    saveState({
+      about,
+      projects,
+      instagram,
+      features,
+      landing,
+      gridFilter: 'all', // all, architecture, products, collaborations, interior
+      listFilter: [],
+      workFilterOpen: true, // boolean
+      workView: 'grid', // 'list'
+      quadrantMode: 'none', // 'hover' || 'click'
+      quadrant: 'none', // 1, 2, 3, 4
+      isFullscreen: false,
+      menuOpen: false,
+      hasLoaded: false
+    });
+  }, 1000));
 
   return store;
 }

@@ -23,7 +23,7 @@ const Grid = ({ projects,  workFilterOpen, gridFilter, quadrant, quadrantMode, u
 		updateQuadrant('none');
 	}
 
-	const hoverVariable = quadrantNumber === 3 ? '-horizontal' : Math.random() >= 0.5 ? '-horizontal' : '-vertical';
+	const hoverVariable = quadrantNumber === 3 || quadrantNumber === 2 ? '-horizontal' : Math.random() >= 0.5 ? '-horizontal' : '-vertical';
 
 	const quadClass = (quad) => {
 		return classNames({
