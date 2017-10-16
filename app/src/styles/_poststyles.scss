@@ -22,6 +22,7 @@ html,body {
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
+    overflow-x:hidden;
 }
 
 /* Video background */
@@ -110,4 +111,8 @@ html,body {
   opacity:0;
   animation-name: fade;
   animation-duration: 1s;
+}
+
+.work__container, .quadrant__single, .quadrant__container {
+  overflow-x:hidden;
 }

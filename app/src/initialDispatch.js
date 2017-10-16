@@ -12,7 +12,10 @@ const initialDispatch = store => {
 	store.dispatch(fetchPosts('pages?slug=landing'));
 
 	setTimeout(() => {
-		store.dispatch(markLoaded());
+
+		if(window.location.pathname !== '/') {
+			store.dispatch(markLoaded());
+		}
 	}, 1000);
 }
 
