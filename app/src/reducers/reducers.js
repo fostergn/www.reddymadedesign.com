@@ -12,10 +12,16 @@ import {
     RECEIVE_POSTS,
     TOGGLE_MENU,
     MARK_LOADED,
+    MOBILE_FILTER_TOGGLE,
 } from '../actions/actions';
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        case MOBILE_FILTER_TOGGLE:
+            return Object.assign({}, state, {
+                isMobileFilterOpen: !state.isMobileFilterOpen
+            });
 
         case MARK_LOADED:
             return Object.assign({}, state, {

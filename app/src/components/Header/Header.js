@@ -10,7 +10,7 @@ import instagram from '../../images/instagram.svg';
 import linkedin from '../../images/linkedin.svg';
 import hamburger from '../../images/hamburger.svg';
 
-const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeGridFilter, changeListFilter, gridFilter, listFilter, changeWorkView}) => {
+const Header = ({mobileFilterToggle, isMobileFilterOpen, about, path, updateQuadrant, updateQuadrantMode, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeGridFilter, changeListFilter, gridFilter, listFilter, changeWorkView}) => {
 
 	const isActive = (location, name) => location.includes(name);
 
@@ -80,7 +80,7 @@ const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, me
         <WorkFilters updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode} changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} listFilter={listFilter} gridFilter={gridFilter} workView={workView} changeListFilter={changeListFilter} changeGridFilter={changeGridFilter}/>
   		</div>
   		<Sidebar />
-      <MobileWorkFilters updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode} changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} listFilter={listFilter} gridFilter={gridFilter} workView={workView} changeListFilter={changeListFilter} changeGridFilter={changeGridFilter}/>
+      <MobileWorkFilters mobileFilterToggle={mobileFilterToggle} isMobileFilterOpen={isMobileFilterOpen} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode} changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} listFilter={listFilter} gridFilter={gridFilter} workView={workView} changeListFilter={changeListFilter} changeGridFilter={changeGridFilter}/>
 	   </div>
   );
 }

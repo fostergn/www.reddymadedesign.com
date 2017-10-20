@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Header from './Header';
-import { updateQuadrant, updateQuadrantMode, toggleFilterMenu, changeGridFilter, changeListFilter, changeWorkView, toggleMenu} from '../../actions/actions';
+import { updateQuadrant, updateQuadrantMode, mobileFilterToggle, toggleFilterMenu, changeGridFilter, changeListFilter, changeWorkView, toggleMenu} from '../../actions/actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     listFilter: state.listFilter,
     menuOpen: state.menuOpen,
     about: state.about,
+    isMobileFilterOpen: state.isMobileFilterOpen
   };
 };
 
@@ -17,6 +18,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     toggleFilterMenu: () => {
       dispatch(toggleFilterMenu());
+    },
+    mobileFilterToggle: () => {
+      dispatch(mobileFilterToggle());
     },
     toggleMenu: () => {
       dispatch(toggleMenu());

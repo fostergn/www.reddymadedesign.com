@@ -12,8 +12,15 @@ export const ADD_INSTAGRAM_IMAGES = 'ADD_INSTAGRAM_IMAGES'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const MARK_LOADED = 'MARK_LOADED'
+export const MOBILE_FILTER_TOGGLE = 'MOBILE_FILTER_TOGGLE'
 
 const baseUrl = process.env.NODE_ENV !== 'production' ? `http://localhost/api` : '/api';
+
+export function mobileFilterToggle(){
+    return {
+        type: MOBILE_FILTER_TOGGLE
+    }
+}
 
 export function markLoaded(){
     return {

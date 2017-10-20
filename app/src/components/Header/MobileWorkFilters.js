@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import $ from 'jquery';
 
-const MobileWorkFilters = ({ updateQuadrant, updateQuadrantMode, path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter }) => {
+const MobileWorkFilters = ({ isMobileFilterOpen, mobileFilterToggle, updateQuadrant, updateQuadrantMode, path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter }) => {
 
 	const filterContainerClass = classNames({
 		'mobile-work-filters__container': true,
@@ -52,13 +52,22 @@ const MobileWorkFilters = ({ updateQuadrant, updateQuadrantMode, path, workFilte
 	}
 
 	const handleFilterClick = () => {
-		$('.mobile-work-filters__list').toggleClass('mobile-work-filters__list--active');
+		mobileFilterToggle();
 		$('.mobile-filter-button').toggleClass('mobile-filter-button--active');
 	}
 
+	console.log('----------');
+	console.log(window.location.pathname);
+	console.log('----------');
+
+	const mobileClasses = classNames({
+		'mobile-work-filters__list': true,
+		'mobile-work-filters__list--active': isMobileFilterOpen && window.location.pathname === '/work'
+	})
+
   return (
         <div className={filterContainerClass}>
-        	<ul className="mobile-work-filters__list">
+        	<ul className={mobileClasses}>
         		<li onClick={() => handleClick('all', workView, 1)} className={filterClass('all')}>All</li>
         		<li onClick={() => handleClick('architecture', workView, 1)} className={filterClass('architecture')}>Architecture</li>
         		<li onClick={() => handleClick('interior', workView, 3)} className={filterClass('interior')}>Interior Design</li>
