@@ -95,7 +95,7 @@
 
 	&__mobile-quote {
 
-		display:block;
+		display:none;
 		margin-top:$vertical-margin-l;
 		padding-right:60px;
 		line-height:1.2em;
@@ -104,6 +104,10 @@
 
 		& > span {
 			margin-top:4px;
+		}
+
+		@include mq(350px) {
+			display:block;
 		}
 
 		@include mq($breakpointB) {

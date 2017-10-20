@@ -32,7 +32,7 @@ export default class SingleImageList extends Component {
 		})
 	}
 	componentDidMount(){
-		this._incrementCounter();
+		// this._incrementCounter();
 	}
 	componentWillUnmount(){
 		clearInterval(this.imageTimer);

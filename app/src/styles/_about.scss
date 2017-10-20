@@ -1,6 +1,7 @@
 .about-content {
 	&__container {
-		margin-top:$vertical-margin-s;
+		// margin-top:$vertical-margin-s;
+		margin-top:20px;
 		margin-bottom:$vertical-margin-s;
 		grid-column: 2 / span 19;
 		color:$red;
@@ -13,6 +14,7 @@
 		}
 
 		@include mq($breakpointC) {
+			margin-top:$vertical-margin-s;
 			grid-column: 3 / span 16;
 		}
 

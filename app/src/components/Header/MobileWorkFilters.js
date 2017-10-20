@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import $ from 'jquery';
 
-const MobileWorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter}) => {
+const MobileWorkFilters = ({ updateQuadrant, updateQuadrantMode, path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter }) => {
 
 	const filterContainerClass = classNames({
 		'mobile-work-filters__container': true,
@@ -42,7 +42,6 @@ const MobileWorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilter
 		} else {
 			// list view
 			changeListFilter(filter)
-
 		}
 
 		// scroll to section
@@ -54,6 +53,7 @@ const MobileWorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilter
 
 	const handleFilterClick = () => {
 		$('.mobile-work-filters__list').toggleClass('mobile-work-filters__list--active');
+		$('.mobile-filter-button').toggleClass('mobile-filter-button--active');
 	}
 
   return (

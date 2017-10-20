@@ -4,6 +4,7 @@
 		width: 100%;
     	position: relative;
     	color:$red;
+    	overflow:hidden;
 
 		@include mq($breakpointC){
 			height: calc(100vh - 41px);

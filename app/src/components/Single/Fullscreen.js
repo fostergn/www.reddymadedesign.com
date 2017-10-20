@@ -32,7 +32,7 @@ export default class Fullscreen extends Component {
 		})
 	}
 	componentDidMount(){
-		this._incrementCounter();
+		// this._incrementCounter();
 	}
 	componentWillUnmount(){
 		clearInterval(this.imageTimer);

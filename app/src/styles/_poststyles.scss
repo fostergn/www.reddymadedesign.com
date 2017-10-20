@@ -116,3 +116,10 @@ html,body {
 .work__container, .quadrant__single, .quadrant__container {
   overflow-x:hidden;
 }
+
+.mobile-filter-button {font-weight: 400}
+.mobile-filter-button--active {font-weight: bold}
+
+.single__tags a {
+  line-height: 1.5em
+}

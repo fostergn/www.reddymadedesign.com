@@ -22,7 +22,7 @@ const About = ({about, features}) => {
 		<div className="template-half template-half--left">
 			<div className="about-content__container">
 				<article className="about-content__article">
-					<header className="about-content__header">Reddymade<br/>Architecture Design</header>
+					<header className="about-content__header">Reddymade and <br/>Architecture Design</header>
 					<div className="about-content__copy about-content__copy--about" dangerouslySetInnerHTML={{__html: description}}>
 					</div>
 				</article>

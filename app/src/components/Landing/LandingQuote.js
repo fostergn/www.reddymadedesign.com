@@ -22,7 +22,11 @@ export default class LandingQuote extends Component {
 		})
 	}
 	componentDidMount(){
-		this._incrementCounter();
+
+		if (this.props.quotes.length > 1) {
+
+			this._incrementCounter();
+		}
 	}
 	componentWillUnmount(){
 		clearInterval(this.opacityTimer);
