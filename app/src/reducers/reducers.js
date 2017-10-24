@@ -13,10 +13,16 @@ import {
     TOGGLE_MENU,
     MARK_LOADED,
     MOBILE_FILTER_TOGGLE,
+    MOBILE_FILTER_OFF
 } from '../actions/actions';
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        case MOBILE_FILTER_OFF:
+            return Object.assign({}, state, {
+                isMobileFilterOpen: false
+            });
 
         case MOBILE_FILTER_TOGGLE:
             return Object.assign({}, state, {

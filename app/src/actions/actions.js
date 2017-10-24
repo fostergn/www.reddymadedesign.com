@@ -13,8 +13,15 @@ export const REQUEST_POSTS = 'REQUEST_POSTS'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const MARK_LOADED = 'MARK_LOADED'
 export const MOBILE_FILTER_TOGGLE = 'MOBILE_FILTER_TOGGLE'
+export const MOBILE_FILTER_OFF = 'MOBILE_FILTER_OFF'
 
 const baseUrl = process.env.NODE_ENV !== 'production' ? `http://localhost/api` : '/api';
+
+export function mobileFilterOff(){
+    return {
+        type: MOBILE_FILTER_OFF
+    }
+}
 
 export function mobileFilterToggle(){
     return {

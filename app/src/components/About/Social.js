@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Contact = ({facebook_url, instagram_url, linkedin_url}) => {
+const Contact = ({facebook_url, instagram_url, linkedin_url, phone_number, fax_number, email }) => {
 
   return (
 	<article className="about-content__article">
@@ -11,9 +11,9 @@ const Contact = ({facebook_url, instagram_url, linkedin_url}) => {
 		<br/>
 		<br/>
 
-		<p className="about-content__copy">P +1212 345 9879</p>
-		<p className="about-content__copy">F +1212 898 0328</p>
-		<p className="about-content__copy">info@reddymadedesign.com</p>
+		<p className="about-content__copy">P {phone_number}</p>
+		<p className="about-content__copy">F {fax_number}</p>
+		<p className="about-content__copy">{email}</p>
 	</article>
   );
 }

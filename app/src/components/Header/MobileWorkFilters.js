@@ -1,8 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import $ from 'jquery';
+import { browserHistory } from 'react-router';
 
-const MobileWorkFilters = ({ isMobileFilterOpen, mobileFilterToggle, updateQuadrant, updateQuadrantMode, path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter }) => {
+const MobileWorkFilters = ({ mobileFilterOff, isMobileFilterOpen, mobileFilterToggle, updateQuadrant, updateQuadrantMode, path, workFilterOpen, workView, changeWorkView, changeGridFilter, changeListFilter, gridFilter, listFilter }) => {
 
 	const filterContainerClass = classNames({
 		'mobile-work-filters__container': true,
@@ -56,14 +57,23 @@ const MobileWorkFilters = ({ isMobileFilterOpen, mobileFilterToggle, updateQuadr
 		$('.mobile-filter-button').toggleClass('mobile-filter-button--active');
 	}
 
-	console.log('----------');
-	console.log(window.location.pathname);
-	console.log('----------');
-
 	const mobileClasses = classNames({
 		'mobile-work-filters__list': true,
 		'mobile-work-filters__list--active': isMobileFilterOpen && window.location.pathname === '/work'
 	})
+
+	browserHistory.listen( location =>  {
+
+	 	if (isMobileFilterOpen) {
+
+	 		mobileFilterOff();
+	 	}
+	});
+
+	const buttonClass = classNames({
+		'mobile-filter-button': true,
+		'mobile-filter-button--active': isMobileFilterOpen
+	});
 
   return (
         <div className={filterContainerClass}>
@@ -76,7 +86,7 @@ const MobileWorkFilters = ({ isMobileFilterOpen, mobileFilterToggle, updateQuadr
         		<div onClick={() => handleFilterClick()} className="mobile-close-filter">X</div>
         	</ul>
         	<div className={viewClass}>
-        		<div className="mobile-filter-button" onClick={() => handleFilterClick()}>Filter</div>
+        		<div className={buttonClass} onClick={() => handleFilterClick()}>Filter</div>
         		<div className="mobile-grid-list">
 	        		<div className={gridClass} onClick={() => changeWorkView('grid')}>Grid</div>
 	        		&nbsp;/&nbsp;
