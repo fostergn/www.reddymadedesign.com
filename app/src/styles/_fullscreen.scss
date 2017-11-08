@@ -64,6 +64,10 @@
 		left:15px;
 		top:50%;
 		transform: translateY(-50%);
+		display:none;
+		@include mq($breakpointC){
+			display:block;
+		}
 	}
 
 	&__right-control {

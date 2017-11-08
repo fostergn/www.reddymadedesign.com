@@ -81,7 +81,7 @@ const MobileWorkFilters = ({ mobileFilterOff, isMobileFilterOpen, mobileFilterTo
         		<li onClick={() => handleClick('all', workView, 1)} className={filterClass('all')}>All</li>
         		<li onClick={() => handleClick('architecture', workView, 1)} className={filterClass('architecture')}>Architecture</li>
         		<li onClick={() => handleClick('interior', workView, 3)} className={filterClass('interior')}>Interior Design</li>
-        		<li onClick={() => handleClick('collaborations', workView, 2)} className={filterClass('collaborations')}>Collaborations</li>
+        		<li onClick={() => handleClick('collaborations', workView, 2)} className={filterClass('collaborations')}>Installations</li>
         		<li onClick={() => handleClick('products', workView, 4)} className={filterClass('products')}>Editions</li>
         		<div onClick={() => handleFilterClick()} className="mobile-close-filter">X</div>
         	</ul>

@@ -35,10 +35,10 @@
 	    top: 50%;
 	    left: 50%;
 	    transform: translate(-50%, -50%);
-	    object-fit:contain;
+	    object-fit:cover;
 
 	    &--bg {
-	    	object-fit:contain;
+	    	object-fit:cover;
 	    	height:100%;
 	    	width:100%;
 	    }
@@ -129,7 +129,7 @@
 		letter-spacing:.075em;
 		color:$red;
 		cursor:pointer;
-		display:none;
+		// display:none;
 
 		@include mq($breakpointC) {
 			display:block;
