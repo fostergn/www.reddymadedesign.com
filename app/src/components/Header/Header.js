@@ -10,7 +10,7 @@ import instagram from '../../images/instagram.svg';
 import linkedin from '../../images/linkedin.svg';
 import hamburger from '../../images/hamburger.svg';
 
-const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeGridFilter, changeListFilter, gridFilter, listFilter, changeWorkView}) => {
+const Header = ({mobileFilterOff, mobileFilterToggle, isMobileFilterOpen, about, path, updateQuadrant, updateQuadrantMode, toggleMenu, menuOpen, workFilterOpen, toggleFilterMenu, workView, changeGridFilter, changeListFilter, gridFilter, listFilter, changeWorkView}) => {
 
 	const isActive = (location, name) => location.includes(name);
 
@@ -55,8 +55,8 @@ const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, me
   			<h1 className="header__title"><Link to="/">Reddymade</Link></h1>
   			<nav className="header__nav">
   				<ul className="header__nav-list">
+          <li className={workClass}><Link to="/work">Work</Link></li>
   					<li className={aboutClass}><Link to="/about">About</Link></li>
-  					<li className={workClass}><Link to="/work">Work</Link></li>
   					<li className={newsClass}><Link to="/news">News</Link></li>
   				</ul>
           <div className="header__mobile-cover"></div>
@@ -64,8 +64,8 @@ const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, me
           <p onClick={() => toggleMenu()} className={mobileMenuCloseIconClass} style={{width:'auto', fontWeight:'bold', fontSize:20}}>X</p>
           <ul className={mobileMenuClass}>
             <ul>
-              <li className={aboutClass}><Link to="/about">About</Link></li>
               <li className={workClass}><Link to="/work">Work</Link></li>
+              <li className={aboutClass}><Link to="/about">About</Link></li>
               <li className={newsClass}><Link to="/news">News</Link></li>
               {about_quote}
             </ul>
@@ -80,7 +80,7 @@ const Header = ({about, path, updateQuadrant, updateQuadrantMode, toggleMenu, me
         <WorkFilters updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode} changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} listFilter={listFilter} gridFilter={gridFilter} workView={workView} changeListFilter={changeListFilter} changeGridFilter={changeGridFilter}/>
   		</div>
   		<Sidebar />
-      <MobileWorkFilters updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode} changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} listFilter={listFilter} gridFilter={gridFilter} workView={workView} changeListFilter={changeListFilter} changeGridFilter={changeGridFilter}/>
+      <MobileWorkFilters mobileFilterOff={mobileFilterOff} mobileFilterToggle={mobileFilterToggle} isMobileFilterOpen={isMobileFilterOpen} updateQuadrant={updateQuadrant} updateQuadrantMode={updateQuadrantMode} changeWorkView={changeWorkView} path={path} workFilterOpen={workFilterOpen} listFilter={listFilter} gridFilter={gridFilter} workView={workView} changeListFilter={changeListFilter} changeGridFilter={changeGridFilter}/>
 	   </div>
   );
 }

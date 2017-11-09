@@ -52,7 +52,7 @@ const WorkFilters = ({updateQuadrant, updateQuadrantMode, path, workFilterOpen, 
         		<li onClick={() => handleClick('all', workView)} className={filterClass('all')}>All</li>
         		<li onClick={() => handleClick('architecture', workView)} className={filterClass('architecture')}>Architecture</li>
         		<li onClick={() => handleClick('interior', workView)} className={filterClass('interior')}>Interior Design</li>
-        		<li onClick={() => handleClick('collaborations', workView)} className={filterClass('collaborations')}>Collaborations</li>
+        		<li onClick={() => handleClick('collaborations', workView)} className={filterClass('collaborations')}>Installations</li>
         		<li onClick={() => handleClick('products', workView)} className={filterClass('products')}>Editions</li>
         	</ul>
         </div>

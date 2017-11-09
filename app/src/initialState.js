@@ -13,6 +13,7 @@ const initialState = {
   isFullscreen: false,
   menuOpen: false,
   hasLoaded: false,
+  isMobileFilterOpen: false,
 };
 
 export default initialState;

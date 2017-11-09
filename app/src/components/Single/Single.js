@@ -38,7 +38,11 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWork
 
 	const tags = [primary_tag, ...secondary_tags].map((tag, index, array) => {
 		if (array.length === index + 1) {
-			return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions</span> : tag === 'interior' ?  <span onClick={() => handleTagClick('interior')}>interior design</span> : <span onClick={() => handleTagClick(tag)}>{tag}</span>
+			return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions</span> : tag === 'interior' ?  <span onClick={() => handleTagClick('interior')}>interior design</span> : tag === 'collaborations' ?  <span onClick={() => handleTagClick('collaborations')}>installations</span> : <span onClick={() => handleTagClick(tag)}>{tag}</span>
+		}
+
+		if (tag === 'collaborations') {
+			return <span onClick={() => handleTagClick('collaborations')}>installations, </span>;
 		}
 
 		if (tag === 'interior') {

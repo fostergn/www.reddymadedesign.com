@@ -85,14 +85,17 @@ export default class SingleImageList extends Component {
 			'backwards': !this.state.forwards
 		});
 
+		const targetLeft = window.isTouchDevice ? <div className="carousel__target-left"  onTouchMove={() => this._prevImage() }></div> : <div className="carousel__target-left"  onClick={() => this._prevImage() }></div>;
+		const targetRight = window.isTouchDevice ? <div className="carousel__target-right"  onTouchMove={() => this._nextImage() }></div> : <div className="carousel__target-right"  onClick={() => this._nextImage() }></div>;
+
 		return (
 			<div className="single__split-right" style={{position:'relative'}}>
 				<ul className={galleryClasses}>
 					<p className={fullscreenClasses} onClick={() => this.props.toggleFullscreen()}>fullscreen</p>
 					{imageList}
 				</ul>
-				<div className="carousel__target-left"  onClick={() => this._prevImage() }></div>
-				<div className="carousel__target-right"  onClick={() => this._nextImage() }></div>
+				{ targetLeft }
+				{ targetRight }
 			</div>
 		)
 	}

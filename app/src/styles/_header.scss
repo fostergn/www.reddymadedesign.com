@@ -165,6 +165,8 @@
     			width: 100vw;
     			justify-content: space-between;
     			font-size:1em;
+    			position: fixed;
+    			bottom: 20px;
 
     			@include mq($breakpointB) {
 
@@ -367,7 +369,7 @@
 	&__list-item {
 		margin: 0 30px 0;
 		cursor:pointer;
-		width:100%;
+		width:52%;
 		padding:0 0 $vertical-margin-xs 0;
 
 		&:first-child {
