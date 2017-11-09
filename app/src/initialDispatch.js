@@ -11,6 +11,8 @@ const initialDispatch = store => {
 	store.dispatch(fetchPosts('pages?slug=about'));
 	store.dispatch(fetchPosts('pages?slug=landing'));
 
+	window.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+
 	setTimeout(() => {
 
 		if(window.location.pathname !== '/') {
