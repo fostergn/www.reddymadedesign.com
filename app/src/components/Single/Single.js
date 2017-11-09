@@ -38,18 +38,18 @@ const Single = ({ location, projects, isFullscreen, toggleFullscreen, changeWork
 
 	const tags = [primary_tag, ...secondary_tags].map((tag, index, array) => {
 		if (array.length === index + 1) {
-			return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions</span> : tag === 'interior' ?  <span onClick={() => handleTagClick('interior')}>interior design</span> : tag === 'collaborations' ?  <span onClick={() => handleTagClick('collaborations')}>installations</span> : <span onClick={() => handleTagClick(tag)}>{tag}</span>
+			return tag === 'products' ? <span key={tag} onClick={() => handleTagClick('products')}>editions</span> : tag === 'interior' ?  <span key={tag} onClick={() => handleTagClick('interior')}>interior design</span> : tag === 'collaborations' ?  <span key={tag} onClick={() => handleTagClick('collaborations')}>installations</span> : <span key={tag} onClick={() => handleTagClick(tag)}>{tag}</span>
 		}
 
 		if (tag === 'collaborations') {
-			return <span onClick={() => handleTagClick('collaborations')}>installations, </span>;
+			return <span key={tag} onClick={() => handleTagClick('collaborations')}>installations, </span>;
 		}
 
 		if (tag === 'interior') {
-			return <span onClick={() => handleTagClick('interior')}>interior design, </span>;
+			return <span key={tag} onClick={() => handleTagClick('interior')}>interior design, </span>;
 		}
 
-		return tag === 'products' ? <span onClick={() => handleTagClick('products')}>editions, </span> : <span onClick={() => handleTagClick(tag)}>{tag}, </span>
+		return tag === 'products' ? <span key={tag} onClick={() => handleTagClick('products')}>editions, </span> : <span key={tag} onClick={() => handleTagClick(tag)}>{tag}, </span>
 	});
 
 	const hero = has_video_for_hero ? <SingleHeroVideo heroVideo={hero_video} /> : <div className="single__hero"><img src={hero_image.url} /></div>;
