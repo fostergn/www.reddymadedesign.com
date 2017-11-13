@@ -43,7 +43,8 @@ export function configureStore() {
       workView: 'grid', // 'list'
       quadrantMode: 'none', // 'hover' || 'click'
       quadrant: 'none', // 1, 2, 3, 4
-      isFullscreen: false,
+      isFullscreen: true,
+      // isFullscreen: false,
       menuOpen: false,
       hasLoaded: false
     });

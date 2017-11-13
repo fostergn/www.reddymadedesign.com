@@ -69,8 +69,8 @@ export default class Fullscreen extends Component {
 								prevImage={this._prevImage}
 								key={img.image.sizes.large + i}
 								forwards={this.state.forwards}
-								prev={this.state.forwards ? (this.state.imageCounter - 2 === (i) || (this.state.imageCounter === 1 && i + 1 === array.length)) : (this.state.imageCounter === (i) || (this.state.imageCounter === array.length && i === 0))}
-								next={this.state.forwards ? (this.state.imageCounter === (i) || (this.state.imageCounter === array.length && i === 0)) : (this.state.imageCounter - 2 === (i) || (this.state.imageCounter === 1 && i + 1 === array.length))}
+								prev={this.state.imageCounter - 2 === (i) || (this.state.imageCounter === 1 && i + 1 === array.length)}
+								next={this.state.imageCounter === (i) || (this.state.imageCounter === array.length && i === 0)}
 								show={this.state.imageCounter === (i+1)}
 								position={i+1}
 								total={array.length}
