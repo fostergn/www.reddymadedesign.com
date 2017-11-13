@@ -14,30 +14,26 @@ export default class Fullscreen extends Component {
 		this._nextImage = throttle(this._nextImage, 800);
 		this._prevImage = throttle(this._prevImage, 800);
 	}
-	_incrementCounter(){
-		this.imageTimer = setInterval(() => {
-			this._nextImage();
-		}, 6000)
-	}
 	_nextImage(){
+		console.log('next image');
 		this.setState({
 			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
 			forwards: true
 		})
 	}
 	_prevImage(){
+		console.log('previous image');
 		this.setState({
 			imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
 			forwards: false
 		})
 	}
-	componentDidMount(){
-		// this._incrementCounter();
-	}
 	componentWillUnmount(){
 		clearInterval(this.imageTimer);
 	}
 	render(){
+
+		console.log('this.state.imageCounter: ', this.state.imageCounter);
 
 		if(!this.props.isFullscreen){return null}
 
@@ -101,7 +97,7 @@ export default class Fullscreen extends Component {
 					<div className="">{this.state.imageCounter} / {this.props.images.length}</div>
 					<div className="fullscreen__right-control" onClick={() => this.props.toggleFullscreen()}>Close</div>
 				</div>
-				<div className="fullscreen__target-left"  onClick={() => this._nextImage() }></div>
+				<div className="fullscreen__target-left"  onClick={() => this._prevImage() }></div>
 				<div className="fullscreen__target-right"  onClick={() => this._nextImage() }></div>
 			</ul>
 		)

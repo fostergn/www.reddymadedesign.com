@@ -14,11 +14,6 @@ export default class SingleImageList extends Component {
 		this._nextImage = throttle(this._nextImage, 800);
 		this._prevImage = throttle(this._prevImage, 800);
 	}
-	_incrementCounter(){
-		this.imageTimer = setInterval(() => {
-			this._nextImage();
-		}, 6000)
-	}
 	_nextImage(){
 		this.setState({
 			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
@@ -31,13 +26,12 @@ export default class SingleImageList extends Component {
 			forwards: false
 		})
 	}
-	componentDidMount(){
-		// this._incrementCounter();
-	}
 	componentWillUnmount(){
 		clearInterval(this.imageTimer);
 	}
 	render(){
+
+		console.log('this.state.imageCounter: ', this.state.imageCounter);
 
 		if (this.props.images.length === 1) {
 			return (
