@@ -13,7 +13,7 @@ const InstagramSingle = ({image, time}) => {
 			    height: 'calc(100% - 10px)',
 			    overflow: 'hidden',
 			}}>
-				<img src={image.url} />
+				<img src={image} />
 			</div>
 			<p className="about-content__date">{moment(new Date(parseInt(time) * 1000)).format('MM.DD.YY')}</p>
 		</div>
