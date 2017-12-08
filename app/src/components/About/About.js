@@ -12,9 +12,9 @@ const About = ({about, features}) => {
 
 	if(about.length < 1 || features.length < 1){ return null }
 
-	const { description, featured_list, staff, facebook_url, instagram_url, linkedin_url, phone_number, fax_number, email, address_line_1, address_line_2 } = about[0].acf;
+	const { description, max_image_width, headshot, featured_list, staff, facebook_url, instagram_url, linkedin_url, phone_number, fax_number, email, address_line_1, address_line_2 } = about[0].acf;
 
-	const staffBioList = [staff[0]].map(member => <StaffBio member={member} />);
+	const staffBioList = [staff[0]].map(member => <StaffBio member={member} max_image_width={max_image_width} headshot={headshot} />);
 
   return (
 	<div className="template-half__container">

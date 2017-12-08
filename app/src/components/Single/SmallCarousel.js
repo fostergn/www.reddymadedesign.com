@@ -31,8 +31,6 @@ export default class SingleImageList extends Component {
 	}
 	render(){
 
-		console.log('this.state.imageCounter: ', this.state.imageCounter);
-
 		if (this.props.images.length === 1) {
 			return (
 				<div className="single__split-right" style={{position:'relative'}}>

@@ -10,7 +10,7 @@ import About from './components/About/AboutContainer';
 import News from './components/News/NewsContainer';
 import { configureStore } from './store';
 import initialDispatch from './initialDispatch';
-import { toggleMenu } from './actions/actions';
+import { toggleMenu, toggleFullscreen } from './actions/actions';
 
 // Initialize store
 const store = configureStore();
@@ -19,7 +19,12 @@ const mountApp = document.getElementById('root');
 // Initial AJAX requests
 initialDispatch(store);
 
-browserHistory.listen( location =>  {
+browserHistory.listen( location => {
+
+  if (store.getState().isFullscreen && !location.pathname.includes('/work/')) {
+
+    store.dispatch(toggleFullscreen());
+  }
 
   if(store.getState().menuOpen) {
 

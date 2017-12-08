@@ -15,14 +15,12 @@ export default class Fullscreen extends Component {
 		this._prevImage = throttle(this._prevImage, 800);
 	}
 	_nextImage(){
-		console.log('next image');
 		this.setState({
 			imageCounter: this.state.imageCounter === this.imagesTotal ? 1 : this.state.imageCounter + 1,
 			forwards: true
 		})
 	}
 	_prevImage(){
-		console.log('previous image');
 		this.setState({
 			imageCounter: this.state.imageCounter === 1 ? this.props.images.length : this.state.imageCounter - 1,
 			forwards: false
@@ -32,8 +30,6 @@ export default class Fullscreen extends Component {
 		clearInterval(this.imageTimer);
 	}
 	render(){
-
-		console.log('this.state.imageCounter: ', this.state.imageCounter);
 
 		if(!this.props.isFullscreen){return null}
 
@@ -89,6 +85,9 @@ export default class Fullscreen extends Component {
 			'backwards': !this.state.forwards
 		});
 
+		const targetLeft = window.isTouchDevice ? <div className="fullscreen__target-left"  onTouchMove={() => this._prevImage() }></div> : <div className="fullscreen__target-left"  onClick={() => this._prevImage() }></div>
+		const targetRight = window.isTouchDevice ? <div className="fullscreen__target-right"  onTouchMove={() => this._nextImage() }></div> : <div className="fullscreen__target-right"  onClick={() => this._nextImage() }></div>
+
 		return (
 			<ul className={containerClasses}>
 				{imageList}
@@ -97,8 +96,8 @@ export default class Fullscreen extends Component {
 					<div className="">{this.state.imageCounter} / {this.props.images.length}</div>
 					<div className="fullscreen__right-control" onClick={() => this.props.toggleFullscreen()}>Close</div>
 				</div>
-				<div className="fullscreen__target-left"  onClick={() => this._prevImage() }></div>
-				<div className="fullscreen__target-right"  onClick={() => this._nextImage() }></div>
+				{targetLeft}
+				{targetRight}
 			</ul>
 		)
 	}

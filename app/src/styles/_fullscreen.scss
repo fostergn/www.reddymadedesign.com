@@ -46,10 +46,10 @@
 		height: 42px;
 	    width: 100vw;
 	    background-color: $red;
-	    position: absolute;
+	    position: fixed;
 	    bottom: 0;
 	    left: 0;
-	    z-index: 10;
+	    z-index: 100;
 	    color:#fff;
 	    display:flex;
 	    justify-content:center;
@@ -74,6 +74,7 @@
 		right:15px;
 		top:50%;
 		transform: translateY(-50%);
+		z-index:100;
 	}
 
 	&__target-left {
