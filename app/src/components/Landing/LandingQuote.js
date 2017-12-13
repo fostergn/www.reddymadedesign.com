@@ -38,7 +38,7 @@ export default class LandingQuote extends Component {
 
 		const landing_quotes = quotes.map(quote => features.find(feature => feature.id === quote.news_item.ID));
 
-		const longest_quote = landing_quotes.reduce((a, b) => a.acf.summary.length > b.acf.summary.length ? a : b);
+		const longest_quote = landing_quotes.reduce((a, b) => a && b && a.acf.summary.length > b.acf.summary.length ? a : b);
 
 		// const rendered_longest_quote = index === 1 ? longest_quote.acf.summary : '';
 

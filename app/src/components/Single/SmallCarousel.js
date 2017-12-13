@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import SingleImage from './SmallCarouselSingle';
-import { throttle } from 'lodash';
+import { debounce } from 'lodash';
+
+const throttle = debounce;
 
 export default class SingleImageList extends Component {
 	constructor(props){
@@ -11,8 +13,8 @@ export default class SingleImageList extends Component {
 			imageCounter: 1,
 			forwards: true
 		};
-		this._nextImage = throttle(this._nextImage, 800);
-		this._prevImage = throttle(this._prevImage, 800);
+		this._nextImage = throttle(this._nextImage, 100);
+		this._prevImage = throttle(this._prevImage, 100);
 	}
 	_nextImage(){
 		this.setState({
