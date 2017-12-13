@@ -85,8 +85,8 @@ export default class Fullscreen extends Component {
 			'backwards': !this.state.forwards
 		});
 
-		const targetLeft = window.isTouchDevice ? <div className="fullscreen__target-left"  onTouchMove={() => this._prevImage() }></div> : <div className="fullscreen__target-left"  onClick={() => this._prevImage() }></div>
-		const targetRight = window.isTouchDevice ? <div className="fullscreen__target-right"  onTouchMove={() => this._nextImage() }></div> : <div className="fullscreen__target-right"  onClick={() => this._nextImage() }></div>
+		const targetLeft = window.isTouchDevice ? <div className="fullscreen__target-left"  onTouchMove={() => throttle(this._prevImage(), 800) }></div> : <div className="fullscreen__target-left"  onClick={() => throttle(this._prevImage(), 800) }></div>
+		const targetRight = window.isTouchDevice ? <div className="fullscreen__target-right"  onTouchMove={() => throttle(this._nextImage(), 800) }></div> : <div className="fullscreen__target-right"  onClick={() => throttle(this._nextImage(), 800) }></div>
 
 		return (
 			<ul className={containerClasses}>
